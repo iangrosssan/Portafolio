@@ -300,11 +300,10 @@ header.panel::before {
 }
 
 /* Sidebar Navigation Panels */
-nav.panel {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.sidebar nav.panel {
+    min-height: 100%;
+    /* Stretch panel to fill sidebar height */
+    flex-grow: 1;
 }
 
 strong {
@@ -400,10 +399,33 @@ strong {
     background: rgba(255, 255, 255, 0.1);
     color: var(--muted);
     border-radius: 0.25rem;
-    margin-left: 0.5rem;
+    margin-right: 0.3rem;
+    /* Spacing between tags */
+    margin-top: 0.4rem;
+    /* Spacing from text */
     vertical-align: middle;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+/* Force tags to next line */
+.nav-item br {
+    display: none;
+    /* Hide actual <br> if used, prefer CSS block formatting */
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    /* Stack name and tags */
+    align-items: flex-start;
+    /* Align left */
+    gap: 0.2rem;
+}
+
+.nav-item>span:first-child {
+    /* Assuming tags are wrapped or just sequential spans */
+    margin-top: 0.2rem;
 }
 
 .nav-item:hover .tag {
