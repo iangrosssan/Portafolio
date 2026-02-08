@@ -225,7 +225,8 @@ header.panel::before {
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 2rem;
-    align-items: start;
+    align-items: stretch;
+    /* Stretch to match height */
     margin-top: 2rem;
 }
 
@@ -235,11 +236,33 @@ header.panel::before {
     }
 }
 
+/* Add Topbar Styles */
+.topbar .panel {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.repo-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .repo-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
 /* Sidebar Wrapper */
 .sidebar {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    height: 100%;
+    /* Ensure it takes full height */
     /* Optional: Make sidebar sticky on desktop */
     position: sticky;
     top: 2rem;
@@ -397,15 +420,18 @@ main {
     border: 1px solid var(--panel-border);
     border-radius: 1rem;
     padding: 1.5rem;
-    min-height: 85vh;
-    /* Increased height */
+    /* Remove min-height fix, use flex grow */
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 iframe {
     width: 100%;
-    flex: 1;
+    flex-grow: 1;
+    /* Grow to fill remaining space */
+    min-height: 80vh;
+    /* Keep substantial min height */
     border-radius: 0.5rem;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
