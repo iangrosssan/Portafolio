@@ -243,6 +243,10 @@ header.panel::before {
     /* Optional: Make sidebar sticky on desktop */
     position: sticky;
     top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    /* Space for scrollbar */
 }
 
 /* Sidebar Navigation Panels */
@@ -366,6 +370,16 @@ strong {
     line-height: 1.5;
     border: 1px solid var(--panel-border);
     color: var(--muted);
+    margin-bottom: 2rem;
+    /* Add spacing below summary */
+}
+
+.doc-summary strong {
+    font-size: 0.7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 0.25rem;
 }
 
 .doc-summary em {
