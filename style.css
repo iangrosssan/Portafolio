@@ -304,6 +304,10 @@ header.panel::before {
     min-height: 100%;
     /* Stretch panel to fill sidebar height */
     flex-grow: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 strong {
