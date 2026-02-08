@@ -294,9 +294,7 @@ header.panel::before {
     position: sticky;
     top: 2rem;
     max-height: calc(100vh - 4rem);
-    overflow-y: auto;
-    padding-right: 0.5rem;
-    /* Space for scrollbar */
+    /* Remove overflow-y calculation here, let panel handle containment */
 }
 
 /* Sidebar Navigation Panels */
@@ -308,6 +306,8 @@ header.panel::before {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    overflow: hidden;
+    /* Contain inner scrolling */
 }
 
 strong {
@@ -319,7 +319,6 @@ strong {
     margin-bottom: 0.5rem;
 }
 
-/* Tab/Toggle Buttons */
 /* Tab/Toggle Buttons (Unified with Nav Items) */
 .section-item {
     width: 100%;
@@ -339,7 +338,6 @@ strong {
     justify-content: space-between;
     align-items: center;
     font-weight: normal;
-    /* Resetting bold from previous style */
 }
 
 .section-item:hover {
@@ -355,16 +353,22 @@ strong {
     border-left: 3px solid var(--accent);
     color: #fff;
     border-color: var(--panel-border);
-    /* Match nav-item border behavior */
     box-shadow: none;
-    /* Resetting specific glow from previous style */
 }
 
-/* Project List Items */
+/* Project List Items - Scroll Container */
 .subnav {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    overflow-y: auto;
+    /* Enable inner scrolling */
+    padding-right: 0.5rem;
+    /* Space for scrollbar */
+    margin-right: -0.5rem;
+    /* Align visual edge */
+    flex-grow: 1;
+    /* Take available space */
 }
 
 .nav-item {
