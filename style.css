@@ -450,8 +450,8 @@ strong {
     line-height: 1.5;
     border: 1px solid var(--panel-border);
     color: var(--muted);
-    margin-bottom: 2rem;
-    /* Add spacing below summary */
+    margin-bottom: 0.5rem;
+    /* Reduced spacing */
 }
 
 .doc-summary strong {

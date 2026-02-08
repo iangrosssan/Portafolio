@@ -151,8 +151,19 @@ function showCode(repoId, event) {
             `#codigo button[data-repo="${h}"]`
         );
         if (btn) showCode(h, { currentTarget: btn });
+        return;
     }
 })();
+
+/* -------------------------
+   Init Default State
+-------------------------- */
+window.addEventListener('load', () => {
+    // If no hash, ensure Academico is visible
+    if (!location.hash) {
+        showSection('academico');
+    }
+});
 
 
 /* -------------------------
