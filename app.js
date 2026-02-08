@@ -13,7 +13,16 @@ function showSection(id) {
     const section = document.getElementById(id);
     if (!section) return;
 
-    section.style.display = 'flex'; // Fix: Use flex to maintain layout
+    // Remove inline display style to let CSS class handle it (which is display: flex)
+    section.style.removeProperty('display');
+
+    // Explicitly add a class if needed, but 'subnav' is already flex. 
+    // Just removing 'display: none' is enough if the default CSS is correct.
+    // However, specifically for the toggle logic:
+    section.style.display = '';
+    if (getComputedStyle(section).display === 'none') {
+        section.style.display = 'flex'; // Fallback if CSS hidden
+    }
 
     const sectionBtn = document.querySelector(
         `.section-item[data-section="${id}"]`
@@ -27,6 +36,7 @@ function showSection(id) {
         if (btn) showCode(lastRepo, { currentTarget: btn });
     }
 }
+
 
 /* -------------------------
    Mobile detection
