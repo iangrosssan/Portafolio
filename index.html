@@ -36,26 +36,29 @@
             </div>
         </header>
 
+        <section class="topbar">
+            <!-- UI POLISH: mode selector -->
+            <nav class="panel" aria-label="Selección de repositorio">
+                <strong style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
+                    Selecciona un repositorio
+                </strong>
+
+                <div class="repo-buttons">
+                    <button class="section-item active" aria-current="true" onclick="showSection('academico')"
+                        data-section="academico">
+                        Repositorio Académico
+                    </button>
+                    <button class="section-item" onclick="showSection('codigo')" data-section="codigo">
+                        Repositorio de Código
+                    </button>
+                </div>
+            </nav>
+        </section>
+
         <section class="layout">
 
             <!-- Sidebar Group -->
             <div class="sidebar">
-                <!-- UI POLISH: mode selector -->
-                <nav class="panel" aria-label="Selección de repositorio">
-                    <strong style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
-                        Selecciona un repositorio
-                    </strong>
-
-                    <div style="display:flex; gap:1rem; margin-top:.5rem;">
-                        <button class="section-item active" aria-current="true" onclick="showSection('academico')"
-                            data-section="academico">
-                            Repositorio Académico
-                        </button>
-                        <button class="section-item" onclick="showSection('codigo')" data-section="codigo">
-                            Repositorio de Código
-                        </button>
-                    </div>
-                </nav>
 
                 <nav class="panel">
 
@@ -153,7 +156,7 @@
 
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=2"></script>
 </body>
 
 </html>
