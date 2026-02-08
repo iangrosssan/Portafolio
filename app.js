@@ -13,7 +13,7 @@ function showSection(id) {
     const section = document.getElementById(id);
     if (!section) return;
 
-    section.style.display = 'block';
+    section.style.display = 'flex'; // Fix: Use flex to maintain layout
 
     const sectionBtn = document.querySelector(
         `.section-item[data-section="${id}"]`
@@ -167,18 +167,33 @@ window.addEventListener('load', () => {
 
 
 /* -------------------------
-   Footer timestamp
+   Footer timestamp (GitHub API)
 -------------------------- */
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
     const el = document.getElementById('last-update');
     if (!el) return;
 
-    const d = new Date();
-    const hh = String(d.getHours()).padStart(2, '0');
-    const min = String(d.getMinutes()).padStart(2, '0');
-    const dd = String(d.getDate()).padStart(2, '0');
-    const mm = String(d.getMonth() + 1).padStart(2, '0');
-    const yyyy = d.getFullYear();
+    try {
+        const response = await fetch('https://api.github.com/repos/iangrosssan/github_pages');
+        if (!response.ok) throw new Error('Network response was not ok');
 
-    el.textContent = `Última actualización: ${hh}:${min} ${dd}/${mm}/${yyyy}`;
+        const data = await response.json();
+        const d = new Date(data.pushed_at); // Use pushed_at from GitHub
+
+        const hh = String(d.getHours()).padStart(2, '0');
+        const min = String(d.getMinutes()).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const yyyy = d.getFullYear();
+
+        el.textContent = `Última actualización: ${hh}:${min} ${dd}/${mm}/${yyyy}`;
+    } catch (error) {
+        console.error('Error fetching repo date:', error);
+        // Fallback to current date or hide if preferred, keeping simple fallback
+        const d = new Date();
+        const dd = String(d.getDate()).padStart(2, '0');
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const yyyy = d.getFullYear();
+        el.textContent = `Última actualización: ${dd}/${mm}/${yyyy}`;
+    }
 });
