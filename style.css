@@ -239,14 +239,41 @@ header.panel::before {
 /* Add Topbar Styles */
 .topbar .panel {
     display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
+    flex-direction: row;
+    /* Horizontal layout */
+    align-items: center;
+    justify-content: space-between;
+    /* Spread content */
+    padding: 1rem 1.5rem;
+    /* Reduced padding */
+    gap: 1rem;
+}
+
+.topbar strong {
+    margin-bottom: 0;
+    /* Remove bottom margin from label */
+    font-size: 0.8rem;
+    /* Slightly larger label */
+    text-wrap: nowrap;
 }
 
 .repo-buttons {
     display: flex;
     gap: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 0;
+    /* Remove top margin */
+    flex: 1;
+    justify-content: flex-end;
+    /* Push buttons to right */
+}
+
+.repo-buttons .section-item {
+    width: auto;
+    /* Allow buttons to size naturally */
+    margin-bottom: 0;
+    /* Remove bottom margin */
+    padding: 0.5rem 1rem;
+    /* Compact padding */
 }
 
 @media (max-width: 600px) {
