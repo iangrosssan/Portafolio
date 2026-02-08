@@ -412,6 +412,8 @@ strong {
     transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
+    /* Prevent shrinking when list is long */
 }
 
 .nav-item:hover {
