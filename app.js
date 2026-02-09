@@ -50,7 +50,7 @@ function isMobile() {
 -------------------------- */
 const summaries = {
     "academico/Montaje_PLD.pdf": {
-        title: "Montaje de Sistema PLD",
+        title: "Montaje Experimental para Deposición por Láser Pulsado",
         text: "Montaje experimental Pulsed Laser Deposition para la síntesis de películas delgadas ferromagnéticas. Se realizó la alineación y caracterización de láser infrarrojo, junto con la puesta en funcionamiento de una cámara de vacío. Se llevó a cabo una deposición preliminar de YIG sobre sustratos sólidos con respuesta magnética, verificada mediante mediciones MOKE."
     },
     "academico/Análisis_Vibracional_y_Rotacional_del_Hidrógeno_Diatómico.pdf": {
@@ -58,15 +58,15 @@ const summaries = {
         text: "Modelo de enlace para la molécula de hidrógeno mediante simulaciones de Density Functional Theory basados en mecánica cuántica. Se describen los estados de vibración y rotación, mostrando buena concordancia con la literatura y destacando su utilidad como marco introductorio para sistemas moleculares simples."
     },
     "academico/Chasis_CubeSat.pdf": {
-        title: "Diseño de Chasis para CubeSat 3U",
+        title: "Diseño Estructural para Chasis CubeSat 3U",
         text: "Diseño estructural de un chasis CubeSat 3U mediante optimización topológica y fabricado mediante manufactura aditiva Selective Laser Melting. Compatible con estándares internacionales de lanzamiento, sistemas deployer y condiciones de operación en ambiente orbital."
     },
     "academico/Simulacion_Chasis_CubeSat.pdf": {
-        title: "Simulación Mecánica Chasis CubeSat",
+        title: "Simulación de carga para Chasis CubeSat",
         text: "Análisis estructural de un chasis CubeSat 3U considerando aceleraciones lineales, expansión térmica y respuesta vibracional, incluyendo vibraciones inducidas por el lanzamiento y excitaciones aleatorias representativas del entorno dinámico del cohete. Los resultados validan la integridad mecánica bajo condiciones operacionales realistas."
     },
     "academico/Prediccion_Afinacion_de_Parches_de_Tambor.pdf": {
-        title: "Afinación de Parche de Tambor",
+        title: "Predicción de Afinación en Parches de Tambor",
         text: "Desarrollo de un modelo de red neuronal que relaciona la tensión de los pernos de afinación con el perfil acústico de un tambor. Se estudia un floor tom con un parche superior uniformemente tenso, estableciendo la base para un sistema de afinación de batería."
     }
 };
@@ -102,17 +102,17 @@ function showPDF(btn, filename) {
 const repos = {
     Repo1: {
         title: 'Spotify Sorter',
-        text: 'Herramienta para organizar playlists de Spotify.',
+        text: 'Aplicación de escritorio con arquitectura modular (Frontend PyQt / Backend) para la gestión automatizada de playlists mediante la API de Spotify. Incluye autenticación OAuth y compilación a ejecutable.',
         repo: 'iangrosssan/Sorter-Spotify'
     },
     Repo2: {
         title: 'Herramientas de Mecánico',
-        text: 'Utilidades de cálculo y automatización mecánica.',
+        text: 'Suite de herramientas para el diseño y análisis de elementos de máquinas. Incluye módulos para el dimensionamiento de sistemas de frenos, cálculo de resistencia de engranajes (rectos y helicoidales) y análisis de vigas bajo cargas complejas.',
         repo: 'iangrosssan/Herramientas_de_Mecanico'
     },
     Repo3: {
-        title: 'Controlador Montaje PLD',
-        text: 'Código de control para sistemas PLD.',
+        title: 'Controlador para Deposición por Láser Pulsado',
+        text: 'Sistema de control paramétrico para Deposición por Láser Pulsado. Regula un sistema de doble motor paso a paso para ajustar los ángulos de inclinación de un espejo y cubrir de manera uniforme la superficie de un sustrato.',
         repo: 'iangrosssan/Controlador_Montaje_PLD'
     }
 };
