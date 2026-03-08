@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portafolio Académico — Ian Gross Sánchez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <header class="panel">
+            <h1 class="hero-title">Ian Gross Sánchez</h1>
+            <div class="hero-stack">
+                <span>Egresado de Ingeniería Mecánica</span>
+                <span>Mayor en Ingeniería Física</span>
+                <span>Minor en Matemática Aplicada</span>
+            </div>
+            <p class="hero-lead">
+                Portafolio de proyectos en simulación computacional, modelado matemático y desarrollo de software.
+            </p>
+            <div class="author" style="margin-top:.4rem;">
+                <a href="../pdf_viewer/CV_Ian_Gross_Sánchez.pdf" target="_blank">CV</a>
+                <a href="https://github.com/iangrosssan" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/ian-gross-sanchez" target="_blank">LinkedIn</a>
+                <a href="https://www.youtube.com/@iangrosan" target="_blank">YouTube</a>
+                <a href="https://www.instagram.com/iangrosan" target="_blank">Instagram</a>
+            </div>
+        </header>
+
+        <section class="topbar">
+            <nav class="panel" aria-label="Selección de repositorio">
+                <strong style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
+                    Repositorios
+                </strong>
+                <div class="repo-buttons">
+                    <a href="../repo_academico/" class="section-item active">Repositorio Académico</a>
+                    <a href="../repo_codigo/" class="section-item">Repositorio de Código</a>
+                </div>
+            </nav>
+        </section>
+
+        <section class="layout">
+            <div class="sidebar">
+                <nav class="panel">
+                    <strong style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
+                        Proyectos
+                    </strong>
+                    <div id="academico" class="subnav">
+                        <button class="nav-item active" id="Chasis_CubeSat" onclick="showPDF('Chasis_CubeSat', 'Chasis_CubeSat.pdf')">
+                            Diseño Estructural para Chasis CubeSat 3U
+                            <span class="tag">Aeroespacial</span>
+                            <span class="tag">Optimización</span>
+                        </button>
+                        <button class="nav-item" id="Simulacion_Chasis_CubeSat" onclick="showPDF('Simulacion_Chasis_CubeSat', 'Simulacion_Chasis_CubeSat.pdf')">
+                            Simulación de carga para Chasis CubeSat
+                            <span class="tag">Estructural</span>
+                            <span class="tag">CAE</span>
+                            <span class="tag">Simcenter 3D</span>
+                        </button>
+                        <button class="nav-item" id="Montaje_PLD" onclick="showPDF('Montaje_PLD', 'Montaje_PLD.pdf')">
+                            Montaje Experimental para Deposición por Láser Pulsado
+                            <span class="tag">Experimental</span>
+                            <span class="tag">Óptica</span>
+                            <span class="tag">Ferromagnético</span>
+                        </button>
+                        <button class="nav-item" id="Análisis_Vibracional_y_Rotacional_del_Hidrógeno_Diatómico" onclick="showPDF('Análisis_Vibracional_y_Rotacional_del_Hidrógeno_Diatómico', 'Análisis_Vibracional_y_Rotacional_del_Hidrógeno_Diatómico.pdf')">
+                            Análisis Vibracional y Rotacional del Hidrógeno Diatómico
+                            <span class="tag">Molecular</span>
+                            <span class="tag">Orca</span>
+                            <span class="tag">DFT</span>
+                        </button>
+                        <button class="nav-item" id="Prediccion_Afinacion_de_Parches_de_Tambor" onclick="showPDF('Prediccion_Afinacion_de_Parches_de_Tambor', 'Prediccion_Afinacion_de_Parches_de_Tambor.pdf')">
+                            Predicción de Afinación en Parches de Tambor
+                            <span class="tag">Acústica</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">TensorFlow</span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+
+            <main aria-label="Vista previa">
+                <div class="doc-summary" id="doc-summary">
+                    <strong>Resumen</strong>
+                    <em id="doc-title">Diseño Estructural para Chasis CubeSat 3U</em>
+                    <span id="doc-text">
+                        Diseño estructural de un chasis CubeSat 3U mediante optimización topológica y fabricado
+                        mediante manufactura aditiva Selective Laser Melting. Compatible con estándares
+                        internacionales de lanzamiento, sistemas deployer y condiciones de operación en ambiente
+                        orbital.
+                    </span>
+                </div>
+                <iframe id="viewer" src="Chasis_CubeSat.pdf" title="Diseño de Chasis para CubeSat 3U"></iframe>
+            </main>
+        </section>
+
+        <footer>
+            <span></span>
+            <span class="footer-center">© Ian Gross Sánchez — Portafolio personal</span>
+            <span id="last-update"></span>
+        </footer>
+
+    </div>
+
+    <script src="../app.js?v=5"></script>
+</body>
+</html>

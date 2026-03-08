@@ -1,0 +1,38 @@
+Tigss/
+├── client/                  # Frontend Web App
+│   ├── css/
+│   │   ├── admin.css        # Admin dashboard styles
+│   │   ├── general.css      # Shared variables and styles
+│   │   ├── login.css        # Login page styles
+│   │   └── user.css         # Operator view styles
+│   ├── js/
+│   │   ├── admin.js         # Admin logic (Tools, EPP, Reports)
+│   │   ├── common.js        # Shared utilities (API, date formatting)
+│   │   ├── login.js         # Auth logic
+│   │   └── user.js          # Operator logic
+│   ├── admin.html           # Admin Dashboard
+│   ├── index.html           # Login Page
+│   └── user.html            # Operator View
+├── db/                      # SQLite Databases
+│   ├── tools.db             # Tools, movements, users
+│   ├── EPP.db               # EPP inventory
+│   ├── tools.csv            # Initial seed data for tools
+│   └── EPP.csv              # Initial seed data for EPP
+├── docs/                    # Documentation
+│   └── templates/           # HTML/Report templates (ITIN-TIGSS-1)
+├── server/                  # Node.js Backend
+│   ├── models/              # Database interaction modules
+│   ├── scripts/             # Maintenance and migration scripts
+│   │   ├── check_tables.js
+│   │   ├── import_insumos_csv.js
+│   │   ├── init_db.js
+│   │   ├── init_insumos_db.js
+│   │   ├── migrate_all.js
+│   │   ├── verify_db.js
+│   │   └── ...
+│   ├── index.js             # Express API Server
+│   ├── logger.js            # Logger & Telegram Bot integration
+│   ├── package.json         # Dependencies
+│   └── .env                 # Environment variables (Credentials, Tokens)
+├── README.md                # Project Documentation
+└── structure.txt            # This file
