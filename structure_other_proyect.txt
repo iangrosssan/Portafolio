@@ -36,3 +36,6 @@ Tigss/
 │   └── .env                 # Environment variables (Credentials, Tokens)
 ├── README.md                # Project Documentation
 └── structure.txt            # This file
+
+Última Actualización
+marzo 9 2026
