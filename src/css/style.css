@@ -262,6 +262,10 @@ header.panel::before {
     .mobile-dropdown[open] summary {
         margin-bottom: 1rem;
     }
+    .mobile-icon-only {
+        font-size: 0 !important;
+        padding: 0.5rem;
+    }
 }
 @media (min-width: 901px) {
     .mobile-only { display: none !important; }
@@ -293,19 +297,19 @@ header.panel::before {
     display: flex;
     gap: 1rem;
     margin-top: 0;
-    /* Remove top margin */
     flex: 1;
-    justify-content: flex-end;
-    /* Push buttons to right */
+    justify-content: center;
+    width: 100%;
 }
 
 .repo-buttons .section-item {
-    width: auto;
-    /* Allow buttons to size naturally */
+    flex: 1;
+    text-align: center;
     margin-bottom: 0;
-    /* Remove bottom margin */
-    padding: 0.5rem 1rem;
-    /* Compact padding */
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 600px) {
