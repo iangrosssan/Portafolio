@@ -192,18 +192,16 @@ header.panel::before {
 .author a::before {
     content: '';
     display: block;
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1.3rem;
+    height: 1.3rem;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-position: center;
-    /* Remove filter, use white fill in SVG */
 }
 
 /* Re-applying the SVG data URIs with white fill (%23ffffff) */
 .author a[href$=".pdf"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23ffffff'%3E%3Ctext x='50' y='65' font-family='Outfit, sans-serif' font-weight='800' font-size='42' text-anchor='middle'%3ECV%3C/text%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23ffffff'%3E%3Ctext x='50' y='68' font-family='Outfit, sans-serif' font-weight='900' font-size='50' text-anchor='middle'%3ECV%3C/text%3E%3C/svg%3E");
 }
 
 .author a[href*="github"]::before {
