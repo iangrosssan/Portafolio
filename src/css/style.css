@@ -262,11 +262,18 @@ header.panel::before {
     .mobile-dropdown[open] summary {
         margin-bottom: 1rem;
     }
-    .mobile-icon-only {
-        font-size: 0 !important;
-        padding: 0.5rem;
+}
+
+@media (max-width: 750px) {
+    .social-text {
+        display: none !important;
+    }
+    .author a {
+        padding: 0.6rem !important;
+        gap: 0 !important;
     }
 }
+
 @media (min-width: 901px) {
     .mobile-only { display: none !important; }
     .mobile-dropdown { pointer-events: none; } /* Disable click to close on desktop */
@@ -278,24 +285,14 @@ header.panel::before {
     flex-direction: row;
     /* Horizontal layout */
     align-items: center;
-    justify-content: space-between;
-    /* Spread content */
+    justify-content: center;
     padding: 1rem 1.5rem;
-    /* Reduced padding */
     gap: 1rem;
-}
-
-.topbar strong {
-    margin-bottom: 0;
-    /* Remove bottom margin from label */
-    font-size: 0.8rem;
-    /* Slightly larger label */
-    text-wrap: nowrap;
 }
 
 .repo-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 0;
     flex: 1;
     justify-content: center;
@@ -306,10 +303,11 @@ header.panel::before {
     flex: 1;
     text-align: center;
     margin-bottom: 0;
-    padding: 0.75rem 1rem;
+    padding: 0.8rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: max-content;
 }
 
 @media (max-width: 600px) {
