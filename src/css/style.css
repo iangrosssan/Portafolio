@@ -260,6 +260,29 @@ header.panel::before {
         align-items: center;
         margin-bottom: 0.5rem;
         font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .mobile-dropdown summary span:first-child {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .dropdown-chevron {
+        width: 1.8rem;
+        height: 1.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--panel-border);
+        border-radius: 0.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        margin-left: 0.75rem;
+        flex-shrink: 0;
+        font-size: 0.7rem;
     }
 
     .mobile-dropdown summary::-webkit-details-marker {
