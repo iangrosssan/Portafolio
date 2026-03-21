@@ -255,17 +255,21 @@ header.panel::before {
     .mobile-dropdown summary {
         list-style: none;
         /* remove default arrow */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         margin-bottom: 0.5rem;
         font-weight: 600;
         cursor: pointer;
         user-select: none;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .mobile-dropdown summary span:first-child {
         flex: 1;
+        min-width: 0; /* Important for flex truncation! */
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
