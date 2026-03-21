@@ -201,7 +201,7 @@ header.panel::before {
 
 /* Re-applying the SVG data URIs with white fill (%23ffffff) */
 .author a[href$=".pdf"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23ffffff'%3E%3Ctext x='50' y='68' font-family='Outfit, sans-serif' font-weight='1000' font-size='70' text-anchor='middle'%3ECV%3C/text%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23ffffff'%3E%3Ctext x='50' y='76' font-family='Outfit, sans-serif' font-weight='1000' font-size='70' text-anchor='middle'%3ECV%3C/text%3E%3C/svg%3E");
 }
 
 .author a[href*="github"]::before {
@@ -213,7 +213,7 @@ header.panel::before {
 }
 
 .author a[href*="youtube"]::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='%23ffffff'%3E%3Cpath d='M941.3 296.1a112.57 112.57 0 0 0-79.2-79.3C792.2 201.4 512 201.4 512 201.4s-280.2 0-350.1 15.4a112.57 112.57 0 0 0-79.2 79.3C67.3 366 67.3 512 67.3 512s0 146 15.4 215.9c8.5 31.8 33.5 56.8 65.3 65.3 69.9 15.4 350.1 15.4 350.1 15.4s280.2 0 350.1-15.4c31.8-8.5 56.8-33.5 65.3-65.3 15.4-69.9 15.4-215.9 15.4-215.9s0-146-15.4-215.9zM423 646.3V377.7l232.5 134.3L423 646.3z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 1224 1224' fill='%23ffffff'%3E%3Cpath d='M941.3 296.1a112.57 112.57 0 0 0-79.2-79.3C792.2 201.4 512 201.4 512 201.4s-280.2 0-350.1 15.4a112.57 112.57 0 0 0-79.2 79.3C67.3 366 67.3 512 67.3 512s0 146 15.4 215.9c8.5 31.8 33.5 56.8 65.3 65.3 69.9 15.4 350.1 15.4 350.1 15.4s280.2 0 350.1-15.4c31.8-8.5 56.8-33.5 65.3-65.3 15.4-69.9 15.4-215.9 15.4-215.9s0-146-15.4-215.9zM423 646.3V377.7l232.5 134.3L423 646.3z'/%3E%3C/svg%3E");
 }
 
 .author a[href*="instagram"]::before {
