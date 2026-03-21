@@ -54,13 +54,18 @@ function showPDF(id, filename) {
 
     location.hash = encodeURIComponent(id);
 
+    // Ensure the filename actually points to the correct GitHub Pages subdirectory
+    const baseUrl = window.SITE_BASE_URL && window.SITE_BASE_URL !== '/' ? window.SITE_BASE_URL : '';
+    // if baseUrl is "/Portafolio/" and filename is "/assets/...", properly format it:
+    const safeFilename = baseUrl ? (baseUrl + filename.substring(1)) : filename;
+
     if (isMobile()) {
-        window.open(filename, '_blank');
+        window.open(safeFilename, '_blank');
         return;
     }
 
     const viewer = document.getElementById('viewer');
-    if (viewer) viewer.src = filename;
+    if (viewer) viewer.src = safeFilename;
 }
 
 /* -------------------------
