@@ -1,0 +1,16 @@
+<header class="panel">
+    <h1 class="hero-title">{{ site.name }}</h1>
+    <div class="hero-stack">
+        {% for title in site.titles %}
+        <span>{{ title }}</span>
+        {% endfor %}
+    </div>
+    <p class="hero-lead">{{ site.lead }}</p>
+    <div class="author" style="margin-top:.4rem;">
+        <a href="{{ site.links.cv }}" target="_blank">CV</a>
+        <a href="{{ site.links.github }}" target="_blank">GitHub</a>
+        <a href="{{ site.links.linkedin }}" target="_blank">LinkedIn</a>
+        <a href="{{ site.links.youtube }}" target="_blank">YouTube</a>
+        <a href="{{ site.links.instagram }}" target="_blank">Instagram</a>
+    </div>
+</header>

@@ -39,10 +39,12 @@ body {
 
 /* Page Layout */
 .page {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 2rem;
     animation: fadeIn 0.8s ease-out;
+    box-sizing: border-box;
 }
 
 @keyframes fadeIn {
@@ -223,16 +225,27 @@ header.panel::before {
 /* Main Layout Grid */
 .layout {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px minmax(0, 1fr);
     gap: 2rem;
     align-items: stretch;
     /* Stretch to match height */
     margin-top: 2rem;
+    width: 100%;
+    max-width: 100%;
 }
 
 @media (max-width: 900px) {
     .layout {
         grid-template-columns: 1fr;
+    }
+    .sidebar {
+        position: static;
+        height: auto;
+        max-height: none;
+    }
+    .subnav {
+        max-height: none;
+        overflow-y: visible;
     }
 }
 
@@ -511,7 +524,6 @@ main {
     border: 1px solid var(--panel-border);
     border-radius: 1rem;
     padding: 1.5rem;
-    /* Remove min-height fix, use flex grow */
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -519,15 +531,12 @@ main {
 
 iframe {
     width: 100%;
-    flex-grow: 1;
-    /* Grow to fill remaining space */
     min-height: 80vh;
-    /* Keep substantial min height */
     border-radius: 0.5rem;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: #fff;
-    /* PDF background usually needs to be light to be readable */
+    flex-grow: 1;
 }
 
 /* Footer */

@@ -1,0 +1,41 @@
+---
+layout: base.njk
+pageTitle: Portafolio
+---
+
+<div class="page" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 85vh;">
+
+    <header class="panel" style="width: 100%; max-width: 800px; text-align: center; padding: 4rem 2rem;">
+        <h1 class="hero-title">{{ site.name }}</h1>
+
+        <div class="hero-stack" style="justify-content: center; flex-wrap: wrap;">
+            {% for title in site.titles %}
+            <span>{{ title }}</span>
+            {% endfor %}
+        </div>
+
+        <p class="hero-lead" style="margin: 0 auto 2.5rem auto;">{{ site.lead }}</p>
+
+        <div class="author" style="margin-top: .4rem; justify-content: center;">
+            <a href="{{ site.links.cv }}" target="_blank">CV</a>
+            <a href="{{ site.links.github }}" target="_blank">GitHub</a>
+            <a href="{{ site.links.linkedin }}" target="_blank">LinkedIn</a>
+            <a href="{{ site.links.youtube }}" target="_blank">YouTube</a>
+            <a href="{{ site.links.instagram }}" target="_blank">Instagram</a>
+        </div>
+
+        <div style="margin-top: 3.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+            <a href="/repo_academico/" class="section-item"
+                style="width: auto; padding: 1rem 2rem; font-size: 1.1rem; text-decoration: none; text-align: center; border-radius: 2rem;">Ver
+                Repositorio Académico</a>
+            <a href="/repo_codigo/" class="section-item"
+                style="width: auto; padding: 1rem 2rem; font-size: 1.1rem; text-decoration: none; text-align: center; border-radius: 2rem;">Ver
+                Repositorio de Código</a>
+        </div>
+    </header>
+
+    <footer style="margin-top: 4rem; border: none; padding-bottom: 0;">
+        <span class="footer-center">© {{ site.name }} — Portafolio personal</span>
+    </footer>
+
+</div>

@@ -1,0 +1,58 @@
+---
+layout: base.njk
+pageTitle: Portafolio de Código
+activeRepo: codigo
+---
+
+<div class="page">
+
+    {% include "header-minimal.njk" %}
+    {% include "topbar.njk" %}
+
+    <section class="layout">
+        <div class="sidebar">
+            <nav class="panel">
+                <strong style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
+                    Proyectos
+                </strong>
+                <div id="codigo" class="subnav">
+                    <button class="nav-item active" id="Repo1" onclick="showCode('Repo1')">
+                        Spotify Sorter
+                        <span class="tag">Python</span>
+                        <span class="tag">Spotify API</span>
+                    </button>
+                    <button class="nav-item" id="Repo2" onclick="showCode('Repo2')">
+                        Herramientas de Mecánico
+                        <span class="tag">Solvers</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">Mathematica</span>
+                    </button>
+                    <button class="nav-item" id="Repo3" onclick="showCode('Repo3')">
+                        Controlador para Deposición por Láser Pulsado
+                        <span class="tag">Python</span>
+                        <span class="tag">Controlador</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <main aria-label="Vista previa">
+            <div class="doc-summary" id="doc-summary">
+                <strong>Resumen</strong>
+                <em id="doc-title">Spotify Sorter</em>
+                <span id="doc-text">
+                    Aplicación de escritorio con arquitectura modular (Frontend PyQt / Backend) para la gestión
+                    automatizada de playlists mediante la API de Spotify. Incluye autenticación OAuth y compilación
+                    a ejecutable.
+                </span>
+            </div>
+            <iframe id="viewer" src="/repo-viewer.html#iangrosssan/Sorter-Spotify"
+                title="Vista de Repositorio"></iframe>
+        </main>
+    </section>
+
+    {% include "footer.njk" %}
+
+</div>
+
+<script src="/js/app.js?v=7"></script>

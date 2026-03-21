@@ -1,0 +1,18 @@
+{
+    "name": "portafolio",
+    "version": "1.0.0",
+    "description": "Portafolio personal — Ian Gross Sánchez",
+    "scripts": {
+        "dev": "npx @11ty/eleventy --serve",
+        "build": "npx @11ty/eleventy"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iangrosssan/github_pages.git"
+    },
+    "author": "Ian Gross Sánchez",
+    "license": "ISC",
+    "devDependencies": {
+        "@11ty/eleventy": "^3.1.5"
+    }
+}
