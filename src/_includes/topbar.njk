@@ -1,8 +1,5 @@
 <section class="topbar">
-    <nav class="panel" aria-label="Selección de repositorio">
-        <strong style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
-            Repositorios
-        </strong>
+    <nav class="panel" aria-label="Selección de repositorio" style="justify-content: center;">
         <div class="repo-buttons">
             <a href="{{ '/repo_academico/' | url }}" class="section-item{% if activeRepo == 'academico' %} active{% endif %}">Repositorio Académico</a>
             <a href="{{ '/repo_codigo/' | url }}" class="section-item{% if activeRepo == 'codigo' %} active{% endif %}">Repositorio de Código</a>

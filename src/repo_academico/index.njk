@@ -12,10 +12,15 @@ activeRepo: academico
     <section class="layout">
         <div class="sidebar">
             <nav class="panel">
-                <strong style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
+                <strong class="desktop-only" style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
                     Proyectos
                 </strong>
-                <div id="academico" class="subnav">
+                <details class="mobile-dropdown" open>
+                    <summary class="nav-item active mobile-only">
+                        <span id="mobile-summary-academico">Diseño Estructural para Chasis CubeSat 3U</span>
+                        <span style="font-size: 0.8rem;">▼</span>
+                    </summary>
+                    <div id="academico" class="subnav">
                     <button class="nav-item active" id="Chasis_CubeSat"
                         onclick="showPDF('Chasis_CubeSat', '/assets/repo_academico/Chasis_CubeSat.pdf')">
                         Diseño Estructural para Chasis CubeSat 3U
@@ -50,7 +55,8 @@ activeRepo: academico
                         <span class="tag">Machine Learning</span>
                         <span class="tag">TensorFlow</span>
                     </button>
-                </div>
+                    </div>
+                </details>
             </nav>
         </div>
 
@@ -74,4 +80,4 @@ activeRepo: academico
 
 </div>
 
-<script src="{{ '/js/app.js' | url }}?v=8"></script>
+<script src="{{ '/js/app.js' | url }}?v=9"></script>

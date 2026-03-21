@@ -52,6 +52,16 @@ function showPDF(id, filename) {
         document.getElementById('doc-text').textContent = s.text;
     }
 
+    // Update mobile dropdown summary and close it
+    const summaryEl = document.getElementById('mobile-summary-academico');
+    if (summaryEl && s) {
+        summaryEl.textContent = s.title;
+    }
+    const detailsWrap = document.querySelector('.mobile-dropdown');
+    if (detailsWrap) {
+        detailsWrap.removeAttribute('open');
+    }
+
     location.hash = encodeURIComponent(id);
 
     // Ensure the filename actually points to the correct GitHub Pages subdirectory
@@ -102,6 +112,16 @@ function showCode(repoId) {
     if (document.getElementById('doc-title')) {
         document.getElementById('doc-title').textContent = r.title;
         document.getElementById('doc-text').textContent = r.text;
+    }
+
+    // Update mobile dropdown summary and close it
+    const summaryEl = document.getElementById('mobile-summary-codigo');
+    if (summaryEl && r) {
+        summaryEl.textContent = r.title;
+    }
+    const detailsWrap = document.querySelector('.mobile-dropdown');
+    if (detailsWrap) {
+        detailsWrap.removeAttribute('open');
     }
 
     const viewer = document.getElementById('viewer');
@@ -167,5 +187,14 @@ window.addEventListener('DOMContentLoaded', async () => {
         const mm = String(d.getMonth() + 1).padStart(2, '0');
         const yyyy = d.getFullYear();
         el.textContent = `Última actualización: ${dd}/${mm}/${yyyy}`;
+    }
+});
+
+// Initialize mobile UI on load
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.innerWidth <= 900) {
+        document.querySelectorAll('.mobile-dropdown').forEach(d => {
+            d.removeAttribute('open');
+        });
     }
 });

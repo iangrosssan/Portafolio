@@ -12,10 +12,15 @@ activeRepo: codigo
     <section class="layout">
         <div class="sidebar">
             <nav class="panel">
-                <strong style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
+                <strong class="desktop-only" style="font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:#64748b;">
                     Proyectos
                 </strong>
-                <div id="codigo" class="subnav">
+                <details class="mobile-dropdown" open>
+                    <summary class="nav-item active mobile-only">
+                        <span id="mobile-summary-codigo">Spotify Sorter</span>
+                        <span style="font-size: 0.8rem;">▼</span>
+                    </summary>
+                    <div id="codigo" class="subnav">
                     <button class="nav-item active" id="Repo1" onclick="showCode('Repo1')">
                         Spotify Sorter
                         <span class="tag">Python</span>
@@ -32,7 +37,8 @@ activeRepo: codigo
                         <span class="tag">Python</span>
                         <span class="tag">Controlador</span>
                     </button>
-                </div>
+                    </div>
+                </details>
             </nav>
         </div>
 
@@ -55,4 +61,4 @@ activeRepo: codigo
 
 </div>
 
-<script src="{{ '/js/app.js' | url }}?v=8"></script>
+<script src="{{ '/js/app.js' | url }}?v=9"></script>

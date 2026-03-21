@@ -247,6 +247,25 @@ header.panel::before {
         max-height: none;
         overflow-y: visible;
     }
+    .desktop-only { display: none !important; }
+    .mobile-dropdown summary {
+        list-style: none; /* remove default arrow */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+    .mobile-dropdown summary::-webkit-details-marker {
+        display: none;
+    }
+    .mobile-dropdown[open] summary {
+        margin-bottom: 1rem;
+    }
+}
+@media (min-width: 901px) {
+    .mobile-only { display: none !important; }
+    .mobile-dropdown { pointer-events: none; } /* Disable click to close on desktop */
 }
 
 /* Add Topbar Styles */
@@ -291,8 +310,12 @@ header.panel::before {
 
 @media (max-width: 600px) {
     .repo-buttons {
-        flex-direction: column;
+        /* Remove flex-direction: column to keep horizontal */
         gap: 0.5rem;
+    }
+    .repo-buttons .section-item {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
     }
 }
 

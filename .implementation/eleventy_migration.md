@@ -12,7 +12,6 @@
 ### ⏳ Pending (Next Steps)
 - **Add new projects**: As you finish new assignments, add their raw assets to `src/assets/`, update `src/_data/site.json`, and drop a new `<button>` into the `.njk` templates.
 - **Link external webapps**: For independent webapps (e.g., `simulacion_cubesat`), maintain them as entirely separate GitHub repositories with their own Pages deployment, and simply link to them from this main portfolio.
-- **SEO Enhancements**: Consider adding dynamic meta descriptions and OpenGraph tags to `base.njk` to improve link visibility when shared on LinkedIn.
 
 ---
 
