@@ -14,6 +14,7 @@ module.exports = function (eleventyConfig) {
         },
         templateFormats: ["njk", "md"],
         htmlTemplateEngine: "njk",
-        markdownTemplateEngine: "njk"
+        markdownTemplateEngine: "njk",
+        pathPrefix: process.env.GITHUB_ACTIONS ? "/Portafolio/" : "/"
     };
 };

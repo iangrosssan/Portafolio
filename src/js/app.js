@@ -38,7 +38,15 @@ function showPDF(id, filename) {
     const btn = document.getElementById(id);
     if (btn) btn.classList.add('active');
 
-    const s = summaries[filename];
+    // Find the summary by matching the filename. Since filename could have base path prepended,
+    // we match it against the raw static keys in `summaries`.
+    const base = window.SITE_BASE_URL && window.SITE_BASE_URL !== '/' ? window.SITE_BASE_URL : '';
+    let summaryKey = filename;
+    if (base && filename.startsWith(base)) {
+        summaryKey = '/' + filename.substring(base.length);
+    }
+
+    const s = summaries[summaryKey];
     if (s && document.getElementById('doc-title')) {
         document.getElementById('doc-title').textContent = s.title;
         document.getElementById('doc-text').textContent = s.text;
@@ -93,9 +101,10 @@ function showCode(repoId) {
 
     const viewer = document.getElementById('viewer');
     const cacheBuster = Date.now();
+    const base = window.SITE_BASE_URL || '/';
 
     if (viewer) {
-        viewer.src = `/repo-viewer.html#${encodeURIComponent(r.repo)}&v=${cacheBuster}`;
+        viewer.src = `${base}repo-viewer.html#${encodeURIComponent(r.repo)}&v=${cacheBuster}`;
     }
 
     history.replaceState(null, '', `#${repoId}`);
@@ -108,10 +117,13 @@ window.addEventListener('load', () => {
     const h = decodeURIComponent(location.hash.slice(1));
     if (!h) return;
 
-    // Try as PDF id — look up with full asset path
-    const pdfPath = `/assets/repo_academico/${h}.pdf`;
-    if (summaries[pdfPath]) {
-        showPDF(h, pdfPath);
+    // Try as PDF id — look up with full asset path relative to domain root
+    const rawPath = `/assets/repo_academico/${h}.pdf`;
+    if (summaries[rawPath]) {
+        const base = window.SITE_BASE_URL || '';
+        // If base is '/', rawPath is already correct. If base is '/Portafolio/', avoid double slash
+        const fullPath = base === '/' ? rawPath : base + rawPath.substring(1);
+        showPDF(h, fullPath);
         return;
     }
 
