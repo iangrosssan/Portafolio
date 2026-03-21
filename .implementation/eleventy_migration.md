@@ -1,5 +1,21 @@
 # Eleventy Migration — Implementation Plan
 
+## 🚀 Current Status (Mar 2026)
+
+### ✅ Completed
+- Fully migrated the portfolio to **Eleventy (11ty)** with Nunjucks `_includes/` templates.
+- Consolidated personal data into `src/_data/site.json`.
+- Restructured CSS layout: Removed strict minimum constraints and expanded `.page` width to `1600px` so both repository iframes dynamically resize to fit massive PDF viewports natively.
+- Resolved **GitHub Pages Subdirectory** routing issues: Configured Eleventy's `pathPrefix` and `url` filter to dynamically point CSS, JS, and PDF paths to `/Portafolio/` when deployed by the GitHub Action.
+- Automated deployment on push to `main` via `deploy.yml`.
+
+### ⏳ Pending (Next Steps)
+- **Add new projects**: As you finish new assignments, add their raw assets to `src/assets/`, update `src/_data/site.json`, and drop a new `<button>` into the `.njk` templates.
+- **Link external webapps**: For independent webapps (e.g., `simulacion_cubesat`), maintain them as entirely separate GitHub repositories with their own Pages deployment, and simply link to them from this main portfolio.
+- **SEO Enhancements**: Consider adding dynamic meta descriptions and OpenGraph tags to `base.njk` to improve link visibility when shared on LinkedIn.
+
+---
+
 Migrate the portfolio from hand-written HTML (with duplicated header/sidebar) to **Eleventy (11ty)** so that shared UI lives in one place and new pages/repos can be added by editing a single data file.
 
 ## How It Works (High-Level)
