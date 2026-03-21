@@ -194,9 +194,8 @@ header.panel::before {
     display: block;
     width: 1.1rem;
     height: 1.1rem;
-    background-size: contain;
+    background-size: 85% auto;
     background-repeat: no-repeat;
-    background-position: center;
     background-position: center;
     /* Remove filter, use white fill in SVG */
 }
@@ -265,12 +264,16 @@ header.panel::before {
 }
 
 @media (max-width: 750px) {
-    .social-text {
+    .social-text:not(.keep-text) {
         display: none !important;
     }
     .author a {
         padding: 0.6rem !important;
         gap: 0 !important;
+    }
+    .author a:has(.keep-text) {
+        padding: 0.6rem 1rem !important;
+        gap: 0.5rem !important;
     }
 }
 
