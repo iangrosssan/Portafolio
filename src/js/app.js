@@ -91,7 +91,7 @@ const repos = {
         title: 'Herramientas Mecánicas',
         text: 'Suite de herramientas para el diseño y análisis de elementos de máquinas. Incluye módulos para el dimensionamiento de sistemas de frenos, cálculo de resistencia de engranajes (rectos y helicoidales) y análisis de vigas bajo cargas complejas.',
         repo: 'iangrosssan/Herramientas_Mecanicas',
-        demoUrl: 'https://iangrosssan.github.io/HerramientasMecanicas'
+        demoUrl: 'https://iangrosssan.github.io/Herramientas_Mecanicas'
     },
     Repo3: {
         title: 'Controlador para Deposición por Láser Pulsado',
