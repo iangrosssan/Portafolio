@@ -83,15 +83,15 @@ function showPDF(id, filename) {
 -------------------------- */
 const repos = {
     Repo1: {
-        title: 'Spotify Sorter',
-        text: 'Aplicación de escritorio con arquitectura modular (Frontend PyQt / Backend) para la gestión automatizada de playlists mediante la API de Spotify. Incluye autenticación OAuth y compilación a ejecutable.',
-        repo: 'iangrosssan/Sorter-Spotify'
-    },
-    Repo2: {
         title: 'Herramientas Mecánicas',
         text: 'Suite de herramientas para el diseño y análisis de elementos de máquinas. Incluye módulos para el dimensionamiento de sistemas de frenos, cálculo de resistencia de engranajes (rectos y helicoidales) y análisis de vigas bajo cargas complejas.',
         repo: 'iangrosssan/Herramientas_Mecanicas',
         demoUrl: 'https://iangrosssan.github.io/Herramientas_Mecanicas'
+    },
+    Repo2: {
+        title: 'Spotify Sorter',
+        text: 'Aplicación de escritorio con arquitectura modular (Frontend PyQt / Backend) para la gestión automatizada de playlists mediante la API de Spotify. Incluye autenticación OAuth y compilación a ejecutable.',
+        repo: 'iangrosssan/Sorter-Spotify'
     },
     Repo3: {
         title: 'Controlador para Deposición por Láser Pulsado',

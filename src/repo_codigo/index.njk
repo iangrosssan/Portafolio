@@ -17,20 +17,20 @@ activeRepo: codigo
                 </strong>
                 <details class="mobile-dropdown" open>
                     <summary class="nav-item active mobile-only">
-                        <span id="mobile-summary-codigo">Spotify Sorter</span>
+                        <span id="mobile-summary-codigo">Herramientas Mecánicas</span>
                         <span class="dropdown-chevron">▼</span>
                     </summary>
                     <div id="codigo" class="subnav">
                     <button class="nav-item active" id="Repo1" onclick="showCode('Repo1')">
-                        Spotify Sorter
-                        <span class="tag">Python</span>
-                        <span class="tag">Spotify API</span>
-                    </button>
-                    <button class="nav-item" id="Repo2" onclick="showCode('Repo2')">
                         Herramientas Mecánicas
                         <span class="tag">Solvers</span>
                         <span class="tag">Excel</span>
                         <span class="tag">Mathematica</span>
+                    </button>
+                    <button class="nav-item" id="Repo2" onclick="showCode('Repo2')">
+                        Spotify Sorter
+                        <span class="tag">Python</span>
+                        <span class="tag">Spotify API</span>
                     </button>
                     <button class="nav-item" id="Repo3" onclick="showCode('Repo3')">
                         Controlador para Deposición por Láser Pulsado
@@ -43,22 +43,20 @@ activeRepo: codigo
         </div>
 
         <main aria-label="Vista previa">
-            <div class="doc-summary" id="doc-summary">
+            <div class="doc-summary has-demo" id="doc-summary">
                 <strong>Resumen</strong>
-                <em id="doc-title">Spotify Sorter</em>
+                <em id="doc-title">Herramientas Mecánicas</em>
                 <span id="doc-text">
-                    Aplicación de escritorio con arquitectura modular (Frontend PyQt / Backend) para la gestión
-                    automatizada de playlists mediante la API de Spotify. Incluye autenticación OAuth y compilación
-                    a ejecutable.
+                    Suite de herramientas para el diseño y análisis de elementos de máquinas. Incluye módulos para el dimensionamiento de sistemas de frenos, cálculo de resistencia de engranajes (rectos y helicoidales) y análisis de vigas bajo cargas complejas.
                 </span>
-                <a id="demo-btn" class="demo-btn" href="#" target="_blank" rel="noopener" style="display:none;">
+                <a id="demo-btn" class="demo-btn" href="https://iangrosssan.github.io/Herramientas_Mecanicas" target="_blank" rel="noopener" style="display:inline-flex;">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
                     Demo
                 </a>
             </div>
-            <iframe id="viewer" src="{{ '/repo-viewer.html' | url }}#iangrosssan/Sorter-Spotify"
+            <iframe id="viewer" src="{{ '/repo-viewer.html' | url }}#iangrosssan/Herramientas_Mecanicas"
                 title="Vista de Repositorio"></iframe>
         </main>
     </section>
