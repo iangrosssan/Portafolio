@@ -90,7 +90,8 @@ const repos = {
     Repo2: {
         title: 'Herramientas Mecánicas',
         text: 'Suite de herramientas para el diseño y análisis de elementos de máquinas. Incluye módulos para el dimensionamiento de sistemas de frenos, cálculo de resistencia de engranajes (rectos y helicoidales) y análisis de vigas bajo cargas complejas.',
-        repo: 'iangrosssan/Herramientas_Mecanicas'
+        repo: 'iangrosssan/Herramientas_Mecanicas',
+        demoUrl: 'https://iangrosssan.github.io/HerramientasMecanicas'
     },
     Repo3: {
         title: 'Controlador para Deposición por Láser Pulsado',
@@ -112,6 +113,20 @@ function showCode(repoId) {
     if (document.getElementById('doc-title')) {
         document.getElementById('doc-title').textContent = r.title;
         document.getElementById('doc-text').textContent = r.text;
+    }
+
+    // Show or hide the demo button
+    const demoBtn = document.getElementById('demo-btn');
+    const docSummary = document.getElementById('doc-summary');
+    if (demoBtn) {
+        if (r.demoUrl) {
+            demoBtn.href = r.demoUrl;
+            demoBtn.style.display = 'inline-flex';
+            if (docSummary) docSummary.classList.add('has-demo');
+        } else {
+            demoBtn.style.display = 'none';
+            if (docSummary) docSummary.classList.remove('has-demo');
+        }
     }
 
     // Update mobile dropdown summary and close it
