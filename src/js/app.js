@@ -88,7 +88,7 @@ const repos = {
         repo: 'iangrosssan/Sorter-Spotify'
     },
     Repo2: {
-        title: 'Herramientas de Mecánico',
+        title: 'Herramientas Mecánicas',
         text: 'Suite de herramientas para el diseño y análisis de elementos de máquinas. Incluye módulos para el dimensionamiento de sistemas de frenos, cálculo de resistencia de engranajes (rectos y helicoidales) y análisis de vigas bajo cargas complejas.',
         repo: 'iangrosssan/Herramientas_Mecanicas'
     },
