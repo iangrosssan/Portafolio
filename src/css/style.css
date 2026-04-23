@@ -153,34 +153,12 @@ header.panel {
     }
 }
 
-/* "Flashy" Header Background Effect */
-header.panel::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 60%);
-    animation: rotate 20s linear infinite;
-    z-index: 0;
-    pointer-events: none;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 .hero-title {
     font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-weight: 700;
     letter-spacing: -0.05em;
+    color: var(--ink); /* Fallback */
     background: radial-gradient(
         circle at var(--glow-x) var(--glow-y),
         #a78bfa 0%,
@@ -332,6 +310,7 @@ header.panel::before {
 }
 
 .social-text {
+    color: var(--ink); /* Fallback */
     background: radial-gradient(
         circle at var(--glow-x) var(--glow-y),
         #ff6b00 0%,
@@ -581,6 +560,7 @@ strong {
 }
 
 .repo-text {
+    color: var(--ink); /* Fallback */
     background: radial-gradient(
         circle at var(--glow-x) var(--glow-y),
         #ff6b00 0%,
