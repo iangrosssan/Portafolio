@@ -31,8 +31,8 @@
 
 .smoke-wisp {
     position: absolute;
-    width: 800px;
-    height: 800px;
+    width: 550px;
+    height: 550px;
     left: 0;
     top: 0;
     border-radius: 50%;
@@ -45,15 +45,15 @@
 }
 
 .wisp-1 { 
-    background: radial-gradient(ellipse at center, rgba(129, 140, 248, 0.15) 0%, rgba(129, 140, 248, 0.08) 30%, rgba(129, 140, 248, 0.02) 50%, rgba(129, 140, 248, 0) 70%); 
+    background: radial-gradient(ellipse at center, rgba(129, 140, 248, 0.08) 0%, rgba(129, 140, 248, 0.04) 30%, rgba(129, 140, 248, 0.01) 50%, rgba(129, 140, 248, 0) 70%); 
 }
 
 .wisp-2 { 
-    background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.12) 0%, rgba(56, 189, 248, 0.06) 25%, rgba(56, 189, 248, 0.02) 45%, rgba(56, 189, 248, 0) 70%); 
+    background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.06) 0%, rgba(56, 189, 248, 0.03) 25%, rgba(56, 189, 248, 0.01) 45%, rgba(56, 189, 248, 0) 70%); 
 }
 
 .wisp-3 { 
-    background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.1) 0%, rgba(167, 139, 250, 0.04) 30%, rgba(167, 139, 250, 0.01) 50%, rgba(167, 139, 250, 0) 70%); 
+    background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.05) 0%, rgba(167, 139, 250, 0.02) 30%, rgba(167, 139, 250, 0.005) 50%, rgba(167, 139, 250, 0) 70%); 
 }
 
 .hero-noise {
