@@ -58,7 +58,7 @@ function showPDF(id, filename) {
         summaryEl.textContent = s.title;
     }
     const detailsWrap = document.querySelector('.mobile-dropdown');
-    if (detailsWrap) {
+    if (detailsWrap && window.innerWidth <= 900) {
         detailsWrap.removeAttribute('open');
     }
 
@@ -135,7 +135,7 @@ function showCode(repoId) {
         summaryEl.textContent = r.title;
     }
     const detailsWrap = document.querySelector('.mobile-dropdown');
-    if (detailsWrap) {
+    if (detailsWrap && window.innerWidth <= 900) {
         detailsWrap.removeAttribute('open');
     }
 
@@ -205,11 +205,25 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Initialize mobile UI on load
-window.addEventListener('DOMContentLoaded', () => {
-    if (window.innerWidth <= 900) {
-        document.querySelectorAll('.mobile-dropdown').forEach(d => {
+// Initialize mobile UI on load and handle resize
+function adjustSidebarForVewport() {
+    const isDesktop = window.innerWidth > 900;
+    document.querySelectorAll('.mobile-dropdown').forEach(d => {
+        if (isDesktop) {
+            d.setAttribute('open', '');
+        } else if (!d.hasAttribute('data-touched')) {
+            // Only auto-close on mobile if the user hasn't interacted with it yet
             d.removeAttribute('open');
-        });
-    }
+        }
+    });
+}
+
+window.addEventListener('DOMContentLoaded', adjustSidebarForVewport);
+window.addEventListener('resize', adjustSidebarForVewport);
+
+// Mark as touched when user toggles it manually
+document.querySelectorAll('.mobile-dropdown summary').forEach(s => {
+    s.addEventListener('click', () => {
+        s.parentElement.setAttribute('data-touched', 'true');
+    });
 });

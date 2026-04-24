@@ -428,7 +428,7 @@ header.panel {
     }
 
     .mobile-dropdown {
-        pointer-events: none;
+        display: contents;
     }
 
     /* Disable click to close on desktop */

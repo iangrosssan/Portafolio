@@ -86,6 +86,9 @@
             wisps[1].el = document.getElementById('wisp-2');
             wisps[2].el = document.getElementById('wisp-3');
 
+            const heroPanel = document.getElementById('hero-panel');
+            const heroRect = heroPanel ? heroPanel.getBoundingClientRect() : { left: 0, top: 0 };
+            
             wisps.forEach((w, i) => {
                 const driftX = Math.sin(now + i) * 30 * w.drift;
                 const driftY = Math.cos(now * 0.7 + i) * 20 * w.drift;
@@ -100,17 +103,15 @@
                     const scale = 1 + Math.sin(now + i) * 0.1 * w.drift;
                     const offsetX = w.el.offsetWidth / 2;
                     const offsetY = w.el.offsetHeight / 2;
-                    w.el.style.transform = `translate(${w.x - offsetX}px, ${w.y - offsetY}px) rotate(${rotate}deg) scale(${scale})`;
+                    // Apply relative transform for the hero panel
+                    w.el.style.transform = `translate(${w.x - heroRect.left - offsetX}px, ${w.y - heroRect.top - offsetY}px) rotate(${rotate}deg) scale(${scale})`;
                     w.el.style.opacity = '1';
                 }
             });
 
-            const panels = document.querySelectorAll('.panel');
-            panels.forEach(p => {
-                const rect = p.getBoundingClientRect();
-                p.style.setProperty('--glow-x', (wisps[0].x - rect.left) + 'px');
-                p.style.setProperty('--glow-y', (wisps[0].y - rect.top) + 'px');
-            });
+            // Set global glow coordinates for fixed backgrounds
+            document.documentElement.style.setProperty('--glow-x', wisps[0].x + 'px');
+            document.documentElement.style.setProperty('--glow-y', wisps[0].y + 'px');
 
             if (moving || isActive) {
                 requestAnimationFrame(animate);
