@@ -57,8 +57,14 @@
             { el: null, x: 0, y: 0, targetX: 0, targetY: 0, lag: 0.04, drift: 0.05 }
         ];
 
-        let mouseX = 0, mouseY = 0;
-        let isActive = false;
+        let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+        let isActive = true;
+
+        // Initialize wisp positions to avoid jump
+        wisps.forEach(w => { w.x = mouseX; w.y = mouseY; });
+        
+        // Start animation immediately
+        requestAnimationFrame(animate);
 
         function updateTracking(e) {
             mouseX = e.clientX;
