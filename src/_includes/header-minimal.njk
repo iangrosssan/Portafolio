@@ -12,4 +12,9 @@
         <a href="{{ site.links.youtube }}" target="_blank" aria-label="YouTube" class="social-button" title="YouTube"><span class="social-text">YouTube</span></a>
         <a href="{{ site.links.instagram }}" target="_blank" aria-label="Instagram" class="social-button" title="Instagram"><span class="social-text">Instagram</span></a>
     </div>
+
+    <div class="repo-buttons" style="margin-top: 0.5rem; width: 100%; max-width: 600px;">
+        <a href="{{ '/repo_academico/' | url }}" class="section-item{% if activeRepo == 'academico' %} active{% endif %}"><span class="repo-text">Repositorio Académico</span></a>
+        <a href="{{ '/repo_codigo/' | url }}" class="section-item{% if activeRepo == 'codigo' %} active{% endif %}"><span class="repo-text">Repositorio de Código</span></a>
+    </div>
 </header>
