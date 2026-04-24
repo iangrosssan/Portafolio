@@ -67,8 +67,10 @@
         requestAnimationFrame(animate);
 
         function updateTracking(e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+            const touch = e.touches ? e.touches[0] : e;
+            mouseX = touch.clientX;
+            mouseY = touch.clientY;
+
             if (!isActive) {
                 isActive = true;
                 animate();
@@ -76,6 +78,8 @@
         }
 
         document.addEventListener('mousemove', updateTracking);
+        document.addEventListener('touchstart', updateTracking, { passive: true });
+        document.addEventListener('touchmove', updateTracking, { passive: true });
 
         function animate() {
             let moving = false;
