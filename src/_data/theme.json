@@ -2,7 +2,9 @@
   "theme": "Mystery",
   "dimensions": {
     "pc_display": "1440x900",
-    "mobile_display": "375x667"
+    "mobile_display": "375x667",
+    "max_width": "950px",
+    "mobile_gap": "2.5rem"
   },
   "typography": {
     "display": "Space Grotesk, sans-serif",
