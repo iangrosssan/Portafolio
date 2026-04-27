@@ -15,6 +15,14 @@
     },
     "academic_projects": [
         {
+            "id": "Machine_Learning_Tambor",
+            "title": "Machine Learning Afinación Tambor",
+            "filename": "/assets/repo_academico/Prediccion_Afinacion_de_Parches_de_Tambor.pdf",
+            "youtubeUrl": "https://youtu.be/Ofvt1dDqgCI",
+            "text": "Desarrollo de un modelo de red neuronal que relaciona la tensión de los pernos de afinación con el perfil acústico de un tambor. Se estudia un floor tom con un parche superior uniformemente tenso, estableciendo la base para un sistema de afinación de batería.",
+            "tags": ["Machine Learning", "Acústica", "Python"]
+        },
+        {
             "id": "Montaje_PLD",
             "title": "Montaje Experimental PLD",
             "filename": "/assets/repo_academico/Montaje_PLD.pdf",
@@ -23,7 +31,7 @@
         },
         {
             "id": "Espectrometria_Hidrogeno",
-            "title": "DFT Hidrógeno Diatómico",
+            "title": "Espectrometría Hidrógeno Diatómico",
             "filename": "/assets/repo_academico/Análisis_Vibracional_y_Rotacional_del_Hidrógeno_Diatómico.pdf",
             "text": "Modelo de enlace para la molécula de hidrógeno mediante simulaciones de Density Functional Theory basados en mecánica cuántica. Se describen los estados de vibración y rotación, mostrando buena concordancia con la literatura y destacando su utilidad como marco introductorio para sistemas moleculares simples.",
             "tags": ["Molecular", "Orca", "DFT"]
@@ -41,13 +49,6 @@
             "filename": "/assets/repo_academico/Simulacion_Chasis_CubeSat.pdf",
             "text": "Análisis estructural de un chasis CubeSat 3U considerando aceleraciones lineales, expansión térmica y respuesta vibracional, incluyendo vibraciones inducidas por el lanzamiento y excitaciones aleatorias representativas del entorno dinámico del cohete. Los resultados validan la integridad mecánica bajo condiciones operacionales realistas.",
             "tags": ["Estructural", "CAE", "Simcenter 3D"]
-        },
-        {
-            "id": "Machine_Learning_Tambor",
-            "title": "Machine Learning Afinación Tambor",
-            "filename": "/assets/repo_academico/Prediccion_Afinacion_de_Parches_de_Tambor.pdf",
-            "text": "Desarrollo de un modelo de red neuronal que relaciona la tensión de los pernos de afinación con el perfil acústico de un tambor. Se estudia un floor tom con un parche superior uniformemente tenso, estableciendo la base para un sistema de afinación de batería.",
-            "tags": ["Machine Learning", "Acústica", "Python"]
         }
     ],
     "code_projects": [

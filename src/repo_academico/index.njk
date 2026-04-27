@@ -41,8 +41,15 @@ activeRepo: academico
                 <span id="doc-text">
                     {{ site.academic_projects[0].text }}
                 </span>
+                <a id="video-btn" class="demo-btn desktop-only" href="{{ site.academic_projects[0].youtubeUrl }}" target="_blank" rel="noopener" style="display: {% if site.academic_projects[0].youtubeUrl %}inline-flex{% else %}none{% endif %};">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    Ver en YouTube
+                </a>
             </div>
-            <a id="mobile-pdf-btn" href="{{ site.academic_projects[0].filename | url }}" target="_blank" class="mobile-action-btn">Ver PDF del Proyecto</a>
+            <a id="mobile-video-btn" href="{{ site.academic_projects[0].youtubeUrl }}" target="_blank" class="mobile-action-btn mobile-only" style="display: {% if site.academic_projects[0].youtubeUrl %}block{% else %}none{% endif %}; margin-bottom: -0.75rem;">Ver en YouTube</a>
+            <a id="mobile-pdf-btn" href="{{ site.academic_projects[0].filename | url }}" target="_blank" class="mobile-action-btn mobile-only">Ver PDF del Proyecto</a>
             <iframe id="viewer" src="{{ site.academic_projects[0].filename | url }}"
                 title="{{ site.academic_projects[0].title }}"></iframe>
         </main>

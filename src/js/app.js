@@ -16,7 +16,8 @@ if (window.SITE_DATA) {
         window.SITE_DATA.academic_projects.forEach(p => {
             summaries[p.filename] = {
                 title: p.title,
-                text: p.text
+                text: p.text,
+                youtubeUrl: p.youtubeUrl || null
             };
         });
     }
@@ -53,10 +54,35 @@ function showPDF(id, filename) {
         document.getElementById('doc-text').textContent = s.text;
     }
 
+    // Update video button
+    const videoBtn = document.getElementById('video-btn');
+    const docSummary = document.getElementById('doc-summary');
+    if (videoBtn) {
+        if (s && s.youtubeUrl) {
+            videoBtn.href = s.youtubeUrl;
+            videoBtn.style.display = 'inline-flex';
+            if (docSummary) docSummary.classList.add('has-demo');
+        } else {
+            videoBtn.style.display = 'none';
+            if (docSummary) docSummary.classList.remove('has-demo');
+        }
+    }
+
     // Update mobile dropdown summary and close it
     const summaryEl = document.getElementById('mobile-summary-academico');
     if (summaryEl && s) {
         summaryEl.textContent = s.title;
+    }
+
+    // Update mobile video button
+    const mobileVideoBtn = document.getElementById('mobile-video-btn');
+    if (mobileVideoBtn) {
+        if (s && s.youtubeUrl && window.innerWidth <= 900) {
+            mobileVideoBtn.href = s.youtubeUrl;
+            mobileVideoBtn.style.display = 'block';
+        } else {
+            mobileVideoBtn.style.display = 'none';
+        }
     }
     const detailsWrap = document.querySelector('.mobile-dropdown');
     if (detailsWrap && window.innerWidth <= 900) {
@@ -116,6 +142,17 @@ function showCode(repoId) {
     const summaryEl = document.getElementById('mobile-summary-codigo');
     if (summaryEl && r) {
         summaryEl.textContent = r.title;
+    }
+
+    // Update mobile demo button
+    const mobileDemoBtn = document.getElementById('mobile-demo-btn');
+    if (mobileDemoBtn) {
+        if (r.demoUrl && window.innerWidth <= 900) {
+            mobileDemoBtn.href = r.demoUrl;
+            mobileDemoBtn.style.display = 'block';
+        } else {
+            mobileDemoBtn.style.display = 'none';
+        }
     }
     const detailsWrap = document.querySelector('.mobile-dropdown');
     if (detailsWrap && window.innerWidth <= 900) {
