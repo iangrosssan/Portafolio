@@ -6,30 +6,31 @@ function isMobile() {
 }
 
 /* -------------------------
-   PDF summaries
+   Project Data Integration
 -------------------------- */
-const summaries = {
-    "/assets/repo_academico/Montaje_PLD.pdf": {
-        title: "Montaje Experimental para Deposición por Láser Pulsado",
-        text: "Montaje experimental Pulsed Laser Deposition para la síntesis de películas delgadas ferromagnéticas. Se realizó la alineación y caracterización de láser infrarrojo, junto con la puesta en funcionamiento de una cámara de vacío. Se llevó a cabo una deposición preliminar de YIG sobre sustratos sólidos con respuesta magnética, verificada mediante mediciones MOKE."
-    },
-    "/assets/repo_academico/Análisis_Vibracional_y_Rotacional_del_Hidrógeno_Diatómico.pdf": {
-        title: "Análisis Vibracional y Rotacional del Hidrógeno Diatómico",
-        text: "Modelo de enlace para la molécula de hidrógeno mediante simulaciones de Density Functional Theory basados en mecánica cuántica. Se describen los estados de vibración y rotación, mostrando buena concordancia con la literatura y destacando su utilidad como marco introductorio para sistemas moleculares simples."
-    },
-    "/assets/repo_academico/Chasis_CubeSat.pdf": {
-        title: "Diseño Estructural para Chasis CubeSat 3U",
-        text: "Diseño estructural de un chasis CubeSat 3U mediante optimización topológica y fabricado mediante manufactura aditiva Selective Laser Melting. Compatible con estándares internacionales de lanzamiento, sistemas deployer y condiciones de operación en ambiente orbital."
-    },
-    "/assets/repo_academico/Simulacion_Chasis_CubeSat.pdf": {
-        title: "Simulación de carga para Chasis CubeSat",
-        text: "Análisis estructural de un chasis CubeSat 3U considerando aceleraciones lineales, expansión térmica y respuesta vibracional, incluyendo vibraciones inducidas por el lanzamiento y excitaciones aleatorias representativas del entorno dinámico del cohete. Los resultados validan la integridad mecánica bajo condiciones operacionales realistas."
-    },
-    "/assets/repo_academico/Prediccion_Afinacion_de_Parches_de_Tambor.pdf": {
-        title: "Predicción de Afinación en Parches de Tambor",
-        text: "Desarrollo de un modelo de red neuronal que relaciona la tensión de los pernos de afinación con el perfil acústico de un tambor. Se estudia un floor tom con un parche superior uniformemente tenso, estableciendo la base para un sistema de afinación de batería."
+const summaries = {};
+const repos = {};
+
+if (window.SITE_DATA) {
+    if (window.SITE_DATA.academic_projects) {
+        window.SITE_DATA.academic_projects.forEach(p => {
+            summaries[p.filename] = {
+                title: p.title,
+                text: p.text
+            };
+        });
     }
-};
+    if (window.SITE_DATA.code_projects) {
+        window.SITE_DATA.code_projects.forEach(p => {
+            repos[p.id] = {
+                title: p.title,
+                repo: p.repo,
+                text: p.text,
+                demoUrl: p.demoUrl || null
+            };
+        });
+    }
+}
 
 function showPDF(id, filename) {
     document.querySelectorAll('.nav-item')
@@ -85,24 +86,7 @@ function showPDF(id, filename) {
 /* -------------------------
    Repository viewer
 -------------------------- */
-const repos = {
-    Repo1: {
-        title: 'Herramientas Mecánicas',
-        text: 'Suite de herramientas para el diseño y análisis de elementos de máquinas. Incluye módulos para el dimensionamiento de sistemas de frenos, cálculo de resistencia de engranajes (rectos y helicoidales) y análisis de vigas bajo cargas complejas.',
-        repo: 'iangrosssan/Herramientas_Mecanicas',
-        demoUrl: 'https://iangrosssan.github.io/Herramientas_Mecanicas'
-    },
-    Repo2: {
-        title: 'Spotify Sorter',
-        text: 'Aplicación de escritorio con arquitectura modular (Frontend PyQt / Backend) para la gestión automatizada de playlists mediante la API de Spotify. Incluye autenticación OAuth y compilación a ejecutable.',
-        repo: 'iangrosssan/Sorter-Spotify'
-    },
-    Repo3: {
-        title: 'Controlador para Deposición por Láser Pulsado',
-        text: 'Sistema de control paramétrico para Deposición por Láser Pulsado. Regula un sistema de doble motor paso a paso para ajustar los ángulos de inclinación de un espejo y cubrir de manera uniforme la superficie de un sustrato.',
-        repo: 'iangrosssan/Controlador_Montaje_PLD'
-    }
-};
+/* Repos object is now built dynamically from SITE_DATA above */
 
 function showCode(repoId) {
     const r = repos[repoId];

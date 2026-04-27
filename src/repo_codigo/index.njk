@@ -16,26 +16,18 @@ activeRepo: codigo
                 </strong>
                 <details class="mobile-dropdown" open>
                     <summary class="nav-item active mobile-only">
-                        <span id="mobile-summary-codigo">Herramientas Mecánicas</span>
+                        <span id="mobile-summary-codigo">{{ site.code_projects[0].title }}</span>
                         <span class="dropdown-chevron">▼</span>
                     </summary>
                     <div id="codigo" class="subnav">
-                    <button class="nav-item active" id="Repo1" onclick="showCode('Repo1')">
-                        Herramientas Mecánicas
-                        <span class="tag">Solvers</span>
-                        <span class="tag">Excel</span>
-                        <span class="tag">Mathematica</span>
-                    </button>
-                    <button class="nav-item" id="Repo2" onclick="showCode('Repo2')">
-                        Spotify Sorter
-                        <span class="tag">Python</span>
-                        <span class="tag">Spotify API</span>
-                    </button>
-                    <button class="nav-item" id="Repo3" onclick="showCode('Repo3')">
-                        Controlador para Deposición por Láser Pulsado
-                        <span class="tag">Python</span>
-                        <span class="tag">Controlador</span>
-                    </button>
+                        {% for project in site.code_projects %}
+                        <button class="nav-item {% if loop.first %}active{% endif %}" id="{{ project.id }}" onclick="showCode('{{ project.id }}')">
+                            {{ project.title }}
+                            {% for tag in project.tags %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </button>
+                        {% endfor %}
                     </div>
                 </details>
             </nav>
@@ -44,9 +36,9 @@ activeRepo: codigo
         <main aria-label="Vista previa">
             <div class="doc-summary has-demo" id="doc-summary">
                 <strong>Resumen</strong>
-                <em id="doc-title">Herramientas Mecánicas</em>
+                <em id="doc-title">{{ site.code_projects[0].title }}</em>
                 <span id="doc-text">
-                    Suite de herramientas para el diseño y análisis de elementos de máquinas. Incluye módulos para el dimensionamiento de sistemas de frenos, cálculo de resistencia de engranajes (rectos y helicoidales) y análisis de vigas bajo cargas complejas.
+                    {{ site.code_projects[0].text }}
                 </span>
                 <a id="demo-btn" class="demo-btn" href="https://iangrosssan.github.io/Herramientas_Mecanicas" target="_blank" rel="noopener" style="display:inline-flex;">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
