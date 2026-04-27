@@ -42,9 +42,9 @@ activeRepo: academico
                     {{ site.academic_projects[0].text }}
                 </span>
             </div>
-            <a id="mobile-pdf-btn" href="#" target="_blank" class="mobile-action-btn">Ver PDF del Proyecto</a>
-            <iframe id="viewer" src="{{ '/assets/repo_academico/Chasis_CubeSat.pdf' | url }}"
-                title="Diseño de Chasis para CubeSat 3U"></iframe>
+            <a id="mobile-pdf-btn" href="{{ site.academic_projects[0].filename | url }}" target="_blank" class="mobile-action-btn">Ver PDF del Proyecto</a>
+            <iframe id="viewer" src="{{ site.academic_projects[0].filename | url }}"
+                title="{{ site.academic_projects[0].title }}"></iframe>
         </main>
     </section>
 

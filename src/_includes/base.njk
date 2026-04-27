@@ -66,6 +66,13 @@
             --mobile-gap: {{ theme.dimensions.mobile_gap }};
         }
     </style>
+    <script>
+        window.SITE_BASE_URL = "{{ '/' | url }}";
+        window.SITE_DATA = {
+            academic_projects: {{ site.academic_projects | dump | safe }},
+            code_projects: {{ site.code_projects | dump | safe }}
+        };
+    </script>
 </head>
 
 <body>
@@ -147,16 +154,7 @@
         }
     })();
     </script>
-    <script>
-        window.SITE_BASE_URL = "{{ '/' | url }}";
-    </script>
     {% block scripts %}{% endblock %}
-    <script>
-        window.SITE_DATA = {
-            academic_projects: {{ site.academic_projects | dump | safe }},
-            code_projects: {{ site.code_projects | dump | safe }}
-        };
-    </script>
 </body>
 
 </html>

@@ -40,15 +40,15 @@ activeRepo: codigo
                 <span id="doc-text">
                     {{ site.code_projects[0].text }}
                 </span>
-                <a id="demo-btn" class="demo-btn" href="https://iangrosssan.github.io/Herramientas_Mecanicas" target="_blank" rel="noopener" style="display:inline-flex;">
+                <a id="demo-btn" class="demo-btn" href="{{ site.code_projects[0].demoUrl }}" target="_blank" rel="noopener" style="display: {% if site.code_projects[0].demoUrl %}inline-flex{% else %}none{% endif %};">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
                     Demo
                 </a>
             </div>
-            <a id="mobile-code-btn" href="#" target="_blank" class="mobile-action-btn">Ver Repositorio GitHub</a>
-            <iframe id="viewer" src="{{ '/repo-viewer.html' | url }}#iangrosssan/Herramientas_Mecanicas"
+            <a id="mobile-code-btn" href="https://github.com/{{ site.code_projects[0].repo }}" target="_blank" class="mobile-action-btn">Ver Repositorio GitHub</a>
+            <iframe id="viewer" src="{{ '/repo-viewer.html' | url }}#{{ site.code_projects[0].repo }}"
                 title="Vista de Repositorio"></iframe>
         </main>
     </section>
