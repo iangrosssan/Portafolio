@@ -100,6 +100,13 @@ body {
     min-height: 100vh;
 }
 
+@media (max-width: 750px) {
+    .page {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 @media (min-width: 900px) {
     .page {
         min-height: 60vh;
@@ -144,7 +151,7 @@ body {
 /* Header Section */
 header.panel {
     width: 100%;
-    max-width: 800px;
+    max-width: 950px;
     padding: 5rem 3rem;
     position: relative;
     overflow: hidden;
@@ -152,9 +159,12 @@ header.panel {
     margin: auto 0; /* Centers vertically in the flex container */
 }
 
-@media (min-width: 900px) {
+@media (max-width: 750px) {
     header.panel {
-        padding: 5rem 2rem;
+        padding: 3rem 1.5rem;
+        width: calc(100% - 2.5rem);
+        margin: 1rem auto;
+        border-radius: 1.5rem;
     }
 }
 
@@ -346,12 +356,17 @@ header.panel {
     /* Stretch to match height */
     margin-top: 2rem;
     width: 100%;
-    max-width: 100%;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 900px) {
     .layout {
         grid-template-columns: 1fr;
+        width: calc(100% - 2.5rem);
+        margin: 1.5rem auto;
+        gap: 1.5rem;
     }
 
     .sidebar {
