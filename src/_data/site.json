@@ -13,6 +13,7 @@
         "youtube": "https://www.youtube.com/@iangrosan",
         "instagram": "https://www.instagram.com/iangrosan"
     },
+    "shareImage": "/assets/icon.png",
     "academic_projects": [
         {
             "id": "Machine_Learning_Tambor",
