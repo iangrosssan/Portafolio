@@ -44,6 +44,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}?v=25">
+    <style>
+        :root {
+            --bg-dark: {{ theme.palette.background.solid }};
+            --bg-gradient: {{ theme.palette.background.solid }};
+            --panel-bg: {{ theme.palette.panels.background }};
+            --panel-border: {{ theme.palette.panels.border }};
+            --panel-blur: blur({{ theme.palette.panels.blur }});
+            --ink: {{ theme.palette.typography.primary }};
+            --muted: {{ theme.palette.typography.muted }};
+            --accent: {{ theme.palette.accents.primary }};
+            --accent-secondary: {{ theme.palette.accents.secondary }};
+            --accent-glow: rgba(254, 88, 3, 0.4);
+            
+            --font-display: {{ theme.typography.display }};
+            --font-interface: {{ theme.typography.interface }};
+            
+            --hero-gradient: {{ theme.gradients.hero_title | safe }};
+        }
+    </style>
 </head>
 
 <body>

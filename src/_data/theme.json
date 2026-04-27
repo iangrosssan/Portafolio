@@ -33,7 +33,7 @@
     }
   },
   "gradients": {
-    "hero_title": "fe5803 -> 6a22a4 -> 7dd3fc",
+    "hero_title": "radial-gradient(circle at var(--glow-x) var(--glow-y), #fe5803 0%, #6a22a4 150px, #7dd3fc 300px, #7dd3fc 100%)",
     "text": "linear-gradient(135deg, #fe5803 0%, #1f51ff 100%)",
     "mystery": "linear-gradient(135deg, #1e3e89 0%, #6a22a4 100%)"
   }

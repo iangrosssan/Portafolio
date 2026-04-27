@@ -14,6 +14,9 @@
     --accent-secondary: #1f51ff; /* Neon Light Blue (5%) */
     --accent-glow: rgba(254, 88, 3, 0.4);
 
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-interface: 'Inter', sans-serif;
+
     --gradient-text: linear-gradient(135deg, #fe5803 0%, #1f51ff 100%);
     --gradient-mystery: linear-gradient(135deg, #1e3e89 0%, #6a22a4 100%);
 
@@ -73,7 +76,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-interface);
     background: var(--bg-dark);
     background-image: var(--bg-gradient);
     color: var(--ink);
@@ -157,17 +160,14 @@ header.panel {
 
 
 .hero-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-display);
     font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-weight: 700;
     letter-spacing: -0.05em;
     color: var(--ink);
     /* Fallback */
-    background: radial-gradient(circle at var(--glow-x) var(--glow-y),
-            #fe5803 0%,
-            #6a22a4 150px,
-            #2abcff 300px,
-            #18b6ff 100%);
+    background: var(--hero-gradient);
+
     background-attachment: fixed;
     -webkit-background-clip: text;
     background-clip: text;
@@ -194,7 +194,7 @@ header.panel {
 }
 
 .hero-stack {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-display);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,11 +210,8 @@ header.panel {
 .hero-stack span {
     position: relative;
     display: block;
-    background: radial-gradient(circle at var(--glow-x) var(--glow-y),
-            #fe5803 0%,
-            #6a22a4 100px,
-            #7dd3fc 200px,
-            #7dd3fc 100%);
+    background: var(--hero-gradient);
+
     background-attachment: fixed;
     -webkit-background-clip: text;
     background-clip: text;
@@ -616,7 +613,7 @@ strong {
 }
 
 .repo-text {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-display);
     color: var(--ink);
     /* Fallback */
     background: radial-gradient(circle at var(--glow-x) var(--glow-y),
