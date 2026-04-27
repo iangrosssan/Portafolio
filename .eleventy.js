@@ -3,6 +3,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/css");
     eleventyConfig.addPassthroughCopy("src/js");
     eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addPassthroughCopy({ "src/assets/favicon.ico": "favicon.ico" });
+    eleventyConfig.addPassthroughCopy({ "src/assets/favicon.png": "favicon.png" });
+    eleventyConfig.addPassthroughCopy({ "src/assets/apple-touch-icon.png": "apple-touch-icon.png" });
     eleventyConfig.addPassthroughCopy("src/repo-viewer.html");
     eleventyConfig.addPassthroughCopy("src/robots.txt");
 
