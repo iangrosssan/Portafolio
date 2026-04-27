@@ -21,7 +21,7 @@ activeRepo: codigo
                     </summary>
                     <div id="codigo" class="subnav">
                         {% for project in site.code_projects %}
-                        <button class="nav-item {% if loop.first %}active{% endif %}" id="{{ project.id }}" onclick="showCode('{{ project.id }}')">
+                        <button class="nav-item {% if loop.first %}active{% endif %}" id="{{ project.id }}" onclick="event.stopPropagation(); showCode('{{ project.id }}')">
                             {{ project.title }}
                             {% for tag in project.tags %}
                             <span class="tag">{{ tag }}</span>

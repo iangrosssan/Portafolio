@@ -22,7 +22,7 @@ activeRepo: academico
                     <div id="academico" class="subnav">
                         {% for project in site.academic_projects %}
                         <button class="nav-item {% if loop.first %}active{% endif %}" id="{{ project.id }}"
-                            onclick="showPDF('{{ project.id }}', '{{ project.filename }}')">
+                            onclick="event.stopPropagation(); showPDF('{{ project.id }}', '{{ project.filename }}')">
                             {{ project.title }}
                             {% for tag in project.tags %}
                             <span class="tag">{{ tag }}</span>

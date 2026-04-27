@@ -60,10 +60,12 @@ function showPDF(id, filename) {
     }
     const detailsWrap = document.querySelector('.mobile-dropdown');
     if (detailsWrap && window.innerWidth <= 900) {
-        detailsWrap.removeAttribute('open');
+        detailsWrap.open = false;
+        // Ensure the selection header is visible after closing a long list
+        detailsWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    location.hash = encodeURIComponent(id);
+    history.replaceState(null, '', `#${id}`);
 
     // Ensure the filename actually points to the correct GitHub Pages subdirectory
     const baseUrl = window.SITE_BASE_URL && window.SITE_BASE_URL !== '/' ? window.SITE_BASE_URL : '';
@@ -73,11 +75,6 @@ function showPDF(id, filename) {
     // Update mobile button if it exists
     const mobilePdfBtn = document.getElementById('mobile-pdf-btn');
     if (mobilePdfBtn) mobilePdfBtn.href = safeFilename;
-
-    if (isMobile()) {
-        // We no longer auto-open, the user clicks the button instead
-        return;
-    }
 
     const viewer = document.getElementById('viewer');
     if (viewer) viewer.src = safeFilename;
@@ -124,7 +121,9 @@ function showCode(repoId) {
     }
     const detailsWrap = document.querySelector('.mobile-dropdown');
     if (detailsWrap && window.innerWidth <= 900) {
-        detailsWrap.removeAttribute('open');
+        detailsWrap.open = false;
+        // Ensure the selection header is visible after closing a long list
+        detailsWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     const viewer = document.getElementById('viewer');
