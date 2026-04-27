@@ -15,9 +15,9 @@ pageTitle: Portafolio
         <h1 class="hero-title">{{ site.name }}</h1>
 
         <div class="hero-stack">
-            <span>Egresado de Ingeniería Civil Mecánica</span>
-            <span>Mayor en Ingeniería Física</span>
-            <span>Minor en Matemática Aplicada</span>
+            {% for title in site.titles %}
+            <span>{{ title }}</span>
+            {% endfor %}
         </div>
 
         <p class="hero-lead">{{ site.lead }}</p>
