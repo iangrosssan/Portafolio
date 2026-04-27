@@ -23,7 +23,7 @@
         },
         {
             "id": "Espectrometria_Hidrogeno",
-            "title": "Espectrometría Hidrógeno Diatómico",
+            "title": "DFT Hidrógeno Diatómico",
             "filename": "/assets/repo_academico/Análisis_Vibracional_y_Rotacional_del_Hidrógeno_Diatómico.pdf",
             "text": "Modelo de enlace para la molécula de hidrógeno mediante simulaciones de Density Functional Theory basados en mecánica cuántica. Se describen los estados de vibración y rotación, mostrando buena concordancia con la literatura y destacando su utilidad como marco introductorio para sistemas moleculares simples.",
             "tags": ["Molecular", "Orca", "DFT"]
