@@ -392,16 +392,35 @@ header.panel {
     }
 
     .sidebar {
-        position: static;
-        height: auto;
-        max-height: none;
+        position: relative;
+        z-index: 1100;
     }
 
-    .subnav {
-        max-height: 40vh;
+    .sidebar nav.panel {
+        overflow: visible !important;
+    }
+
+    .mobile-dropdown {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    .mobile-dropdown .subnav {
+        max-height: 65vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        padding-right: 0.25rem;
+        padding: 0.25rem;
+        background: #071026; /* Solid var(--bg-dark) equivalent */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        border: 1px solid var(--panel-border);
+        border-top: none;
+        border-radius: 0 0 1.25rem 1.25rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
     }
 
     .desktop-only {
@@ -431,6 +450,11 @@ header.panel {
         padding-bottom: 0.5rem;
         border-bottom: 1px solid transparent;
         transition: border-bottom 0.3s ease;
+    }
+
+    .mobile-dropdown .nav-item {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
     }
 
 

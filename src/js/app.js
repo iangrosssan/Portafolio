@@ -61,8 +61,6 @@ function showPDF(id, filename) {
     const detailsWrap = document.querySelector('.mobile-dropdown');
     if (detailsWrap && window.innerWidth <= 900) {
         detailsWrap.open = false;
-        // Ensure the selection header is visible after closing a long list
-        detailsWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     history.replaceState(null, '', `#${id}`);
@@ -122,8 +120,6 @@ function showCode(repoId) {
     const detailsWrap = document.querySelector('.mobile-dropdown');
     if (detailsWrap && window.innerWidth <= 900) {
         detailsWrap.open = false;
-        // Ensure the selection header is visible after closing a long list
-        detailsWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     const viewer = document.getElementById('viewer');
