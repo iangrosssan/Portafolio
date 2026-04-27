@@ -69,8 +69,12 @@ function showPDF(id, filename) {
     // if baseUrl is "/Portafolio/" and filename is "/assets/...", properly format it:
     const safeFilename = baseUrl ? (baseUrl + filename.substring(1)) : filename;
 
+    // Update mobile button if it exists
+    const mobilePdfBtn = document.getElementById('mobile-pdf-btn');
+    if (mobilePdfBtn) mobilePdfBtn.href = safeFilename;
+
     if (isMobile()) {
-        window.open(safeFilename, '_blank');
+        // We no longer auto-open, the user clicks the button instead
         return;
     }
 
@@ -142,6 +146,10 @@ function showCode(repoId) {
     const viewer = document.getElementById('viewer');
     const cacheBuster = Date.now();
     const base = window.SITE_BASE_URL || '/';
+
+    // Update mobile button for code
+    const mobileCodeBtn = document.getElementById('mobile-code-btn');
+    if (mobileCodeBtn) mobileCodeBtn.href = `https://github.com/${r.repo}`;
 
     if (viewer) {
         viewer.src = `${base}repo-viewer.html#${encodeURIComponent(r.repo)}&v=${cacheBuster}`;
