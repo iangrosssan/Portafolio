@@ -1,25 +1,23 @@
 :root {
-    /* Deep Space Theme */
-    --bg-dark: #030712;
-    --bg-gradient: radial-gradient(circle at top right, #080e1e, #030712);
+    /* Mystery Aesthetic Palette (2025 Framework) */
+    --bg-dark: #071026; /* Solid Metallic-Jet average */
+    --bg-gradient: var(--bg-dark); /* Unified solid background */
 
-    --panel-bg: rgba(7, 10, 25, 0.85);
-    --panel-border: rgba(56, 189, 248, 0.1);
-    --panel-blur: blur(20px);
+    --panel-bg: rgba(30, 62, 137, 0.2); /* Metallic Blue Surface (Contrast) */
+    --panel-border: rgba(31, 81, 255, 0.25); /* Neon Light Blue Border */
+    --panel-blur: blur(30px);
 
-    --ink: #f8fafc;
-    /* Main text */
+    --ink: #e0f2fe; /* Icy Light Blue typography */
     --muted: #94a3b8;
-    /* Secondary text */
 
-    --accent: #38bdf8;
-    /* Cyan/Sky Blue */
-    --accent-glow: rgba(56, 189, 248, 0.3);
+    --accent: #fe5803; /* Willpower Orange (5%) */
+    --accent-secondary: #1f51ff; /* Neon Light Blue (5%) */
+    --accent-glow: rgba(254, 88, 3, 0.4);
 
-    --gradient-text: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    --gradient-text: linear-gradient(135deg, #fe5803 0%, #1f51ff 100%);
+    --gradient-mystery: linear-gradient(135deg, #1e3e89 0%, #6a22a4 100%);
 
-    --anim-speed: 0.3s;
-
+    --anim-speed: 0.4s;
     --glow-x: 50%;
     --glow-y: 50%;
 }
@@ -48,15 +46,15 @@
 }
 
 .wisp-1 {
-    background: radial-gradient(ellipse at center, rgba(129, 140, 248, 0.08) 0%, rgba(129, 140, 248, 0.04) 30%, rgba(129, 140, 248, 0.01) 50%, rgba(129, 140, 248, 0) 70%);
+    background: radial-gradient(ellipse at center, rgba(31, 81, 255, 0.08) 0%, rgba(31, 81, 255, 0.04) 30%, rgba(31, 81, 255, 0.01) 50%, rgba(31, 81, 255, 0) 70%);
 }
 
 .wisp-2 {
-    background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.06) 0%, rgba(56, 189, 248, 0.03) 25%, rgba(56, 189, 248, 0.01) 45%, rgba(56, 189, 248, 0) 70%);
+    background: radial-gradient(ellipse at center, rgba(254, 88, 3, 0.06) 0%, rgba(254, 88, 3, 0.03) 25%, rgba(254, 88, 3, 0.01) 45%, rgba(254, 88, 3, 0) 70%);
 }
 
 .wisp-3 {
-    background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.05) 0%, rgba(167, 139, 250, 0.02) 30%, rgba(167, 139, 250, 0.005) 50%, rgba(167, 139, 250, 0) 70%);
+    background: radial-gradient(ellipse at center, rgba(30, 62, 137, 0.1) 0%, rgba(30, 62, 137, 0.05) 30%, rgba(30, 62, 137, 0.01) 50%, rgba(30, 62, 137, 0) 70%);
 }
 
 .hero-noise {
@@ -75,7 +73,7 @@
 }
 
 body {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg-dark);
     background-image: var(--bg-gradient);
     color: var(--ink);
@@ -90,14 +88,13 @@ body {
     width: 100%;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     animation: fadeIn 0.8s ease-out;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 85vh;
+    min-height: 100vh;
 }
 
 @media (min-width: 900px) {
@@ -122,14 +119,13 @@ body {
 .panel {
     background: var(--panel-bg);
     backdrop-filter: var(--panel-blur);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    /* Specular Line */
+    -webkit-backdrop-filter: var(--panel-blur);
+    border: 1px solid var(--panel-border);
+    border-top: 1px solid rgba(31, 81, 255, 0.3); /* Specular neon hint */
     border-radius: 1.25rem;
     box-shadow:
-        0 8px 32px 0 rgba(0, 0, 0, 0.37),
-        inset 0 0 60px rgba(0, 0, 0, 0.2);
-    /* Inner Depth */
+        0 8px 32px 0 rgba(0, 0, 0, 0.6),
+        inset 0 0 40px rgba(31, 81, 255, 0.05); /* Elevation through illumination */
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -146,30 +142,32 @@ body {
 header.panel {
     width: 100%;
     max-width: 800px;
-    padding: 10rem 2rem;
+    padding: 5rem 3rem;
     position: relative;
     overflow: hidden;
     text-align: center;
+    margin: auto 0; /* Centers vertically in the flex container */
 }
 
 @media (min-width: 900px) {
     header.panel {
-        padding: 7rem 2rem;
+        padding: 5rem 2rem;
     }
 }
 
 
 .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-weight: 700;
     letter-spacing: -0.05em;
     color: var(--ink);
     /* Fallback */
     background: radial-gradient(circle at var(--glow-x) var(--glow-y),
-            #a78bfa 0%,
-            #818cf8 150px,
-            #38bdf8 300px,
-            #38bdf8 100%);
+            #fe5803 0%,
+            #6a22a4 150px,
+            #2abcff 300px,
+            #18b6ff 100%);
     background-attachment: fixed;
     -webkit-background-clip: text;
     background-clip: text;
@@ -196,6 +194,7 @@ header.panel {
 }
 
 .hero-stack {
+    font-family: 'Space Grotesk', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,16 +204,17 @@ header.panel {
     margin-bottom: 2rem;
     position: relative;
     z-index: 2;
+    letter-spacing: 0.02em;
 }
 
 .hero-stack span {
     position: relative;
     display: block;
     background: radial-gradient(circle at var(--glow-x) var(--glow-y),
-            #a78bfa 0%,
-            #818cf8 100px,
-            #38bdf8 200px,
-            #38bdf8 100%);
+            #fe5803 0%,
+            #6a22a4 100px,
+            #7dd3fc 200px,
+            #7dd3fc 100%);
     background-attachment: fixed;
     -webkit-background-clip: text;
     background-clip: text;
@@ -240,28 +240,32 @@ header.panel {
 .author a {
     text-decoration: none;
     color: var(--ink);
-    padding: 0.6rem 1.2rem;
+    padding: 0.8rem 1.5rem;
     background: radial-gradient(circle at var(--glow-x) var(--glow-y),
-            rgba(56, 189, 248, 0.3) 0%,
-            rgba(255, 255, 255, 0.05) 150px,
+            rgba(255, 107, 0, 0.15) 0%,
+            rgba(255, 255, 255, 0.08) 150px,
             transparent 300px);
     background-attachment: fixed;
-    border: 1px solid var(--panel-border);
+    border: 1px solid rgba(254, 88, 3, 0.2);
     border-radius: 2rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    backdrop-filter: blur(10px);
 }
 
 .author a:hover {
-    background: var(--accent-glow);
-    border-color: var(--accent);
+    background: rgba(254, 88, 3, 0.15);
+    border-color: #ff9d00;
     color: #fff;
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 10px 20px var(--accent-glow);
+    box-shadow: 
+        0 0 15px rgba(254, 88, 3, 0.4),
+        0 0 30px rgba(254, 88, 3, 0.2),
+        inset 0 0 10px rgba(254, 88, 3, 0.2);
 }
 
 /* Icons for social links - keeping inline SVG logic but adjusting colors via filter if needed, 
@@ -326,9 +330,9 @@ header.panel {
     color: var(--ink);
     /* Fallback */
     background: radial-gradient(circle at var(--glow-x) var(--glow-y),
-            #ff6b00 0%,
-            #f8fafc 80px,
-            #f8fafc 100%);
+            var(--accent) 0%,
+            var(--ink) 80px,
+            var(--ink) 100%);
     background-attachment: fixed;
     -webkit-background-clip: text;
     background-clip: text;
@@ -417,19 +421,46 @@ header.panel {
 
 @media (max-width: 750px) {
     .social-text {
-        display: none !important;
+        display: none;
+        white-space: nowrap;
     }
 
     .author a {
-        width: 3rem;
-        height: 3rem;
-        padding: 0 !important;
-        display: flex !important;
+        width: 3.2rem;
+        height: 3.2rem;
+        padding: 0;
+        display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50% !important;
-        gap: 0 !important;
+        border-radius: 50%;
+        gap: 0;
+        transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                    border-radius 0.3s ease, 
+                    padding 0.3s ease,
+                    background 0.2s ease,
+                    transform 0.2s ease;
+        overflow: hidden;
     }
+
+    /* Expand on center logic - Disabled for static socials */
+    .author:not(.socials-static) a:hover, 
+    .author:not(.socials-static) a:active {
+        width: 9.5rem;
+        border-radius: 2rem;
+        padding: 0 1rem;
+        gap: 0.6rem;
+    }
+
+    .author:not(.socials-static) a:hover .social-text,
+    .author:not(.socials-static) a:active .social-text {
+        display: inline-block;
+        animation: slideInText 0.3s ease-out forwards;
+    }
+}
+
+@keyframes slideInText {
+    from { opacity: 0; transform: translateX(-5px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @media (min-width: 901px) {
@@ -479,13 +510,18 @@ header.panel {
 
 @media (max-width: 600px) {
     .repo-buttons {
-        /* Remove flex-direction: column to keep horizontal */
-        gap: 0.5rem;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 280px; /* Centered narrow stack */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .repo-buttons .section-item {
-        font-size: 0.85rem;
-        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        padding: 0.8rem 1.25rem;
+        min-width: 100%;
     }
 }
 
@@ -531,7 +567,7 @@ strong {
     padding: 1rem;
     margin-bottom: 0.5rem;
     background: radial-gradient(circle at var(--glow-x) var(--glow-y),
-            rgba(56, 189, 248, 0.15) 0%,
+            rgba(255, 107, 0, 0.15) 0%,
             rgba(255, 255, 255, 0.03) 200px,
             transparent 400px);
     background-attachment: fixed;
@@ -552,11 +588,13 @@ strong {
 }
 
 .section-item:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
     transform: translateY(-5px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    color: var(--accent);
+    border-color: #ff8c00;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(254, 88, 3, 0.3);
+    color: #ff9d00;
 }
 
 .section-item::before {
@@ -578,17 +616,19 @@ strong {
 }
 
 .repo-text {
+    font-family: 'Space Grotesk', sans-serif;
     color: var(--ink);
     /* Fallback */
     background: radial-gradient(circle at var(--glow-x) var(--glow-y),
-            #ff6b00 0%,
-            #f8fafc 100px,
-            #f8fafc 100%);
+            var(--accent) 0%,
+            var(--ink) 100px,
+            var(--ink) 100%);
     background-attachment: fixed;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: 700;
+    letter-spacing: 0.01em;
 }
 
 .section-item:hover .repo-text {
@@ -721,18 +761,18 @@ strong {
 
 .nav-item:hover .tag {
     background: var(--accent);
-    color: #0f172a;
+    color: var(--bg-dark);
 }
 
 /* Document Summary Box */
 .doc-summary {
-    background: rgba(15, 23, 42, 0.5);
+    background: rgba(7, 16, 38, 0.4);
     border-radius: 0.75rem;
     padding: 1rem;
     font-size: 0.9rem;
     line-height: 1.5;
     border: 1px solid var(--panel-border);
-    color: var(--muted);
+    color: var(--ink);
     margin-bottom: 0.5rem;
     position: relative;
     transition: padding-bottom 0.3s ease;
@@ -767,7 +807,7 @@ strong {
     align-items: center;
     gap: 0.4rem;
     padding: 0.45rem 1rem;
-    background: linear-gradient(135deg, var(--accent), #818cf8);
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
     color: #fff;
     font-size: 0.8rem;
     font-weight: 600;
@@ -813,11 +853,13 @@ iframe {
 /* Footer */
 footer {
     text-align: center;
-    padding: 2rem;
+    padding: 0rem 1.5rem 0.2rem; /* Push text down with larger bottom padding */
     color: var(--muted);
-    font-size: 0.85rem;
-    border-top: 1px solid var(--panel-border);
-    margin-top: 2rem;
+    font-size: 0.8rem;
+    border-top: none; /* Removed horizontal line */
+    margin-top: auto; /* Pushes footer to bottom */
+    width: 100%;
+    opacity: 0.35; /* Subtle grey appearance */
 }
 
 /* Scrollbar Polish */
@@ -830,7 +872,7 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #334155, #475569);
+    background: linear-gradient(to bottom, #1e3e89, #0a0a0a);
     border-radius: 10px;
     border: 2px solid var(--bg-dark);
 }

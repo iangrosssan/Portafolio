@@ -1,0 +1,40 @@
+{
+  "theme": "Mystery",
+  "dimensions": {
+    "pc_display": "1440x900",
+    "mobile_display": "375x667"
+  },
+  "typography": {
+    "display": "Space Grotesk, sans-serif",
+    "interface": "Inter, sans-serif",
+    "description": "Tech-forward futuristic pairing"
+  },
+  "palette": {
+    "background": {
+      "solid": "#071026",
+      "description": "Solid Metallic-Jet average"
+    },
+    "typography": {
+      "primary": "#e0f2fe",
+      "muted": "#94a3b8",
+      "description": "Icy Light Blue"
+    },
+    "accents": {
+      "primary": "#fe5803",
+      "secondary": "#1f51ff",
+      "sky_glow": "#7dd3fc",
+      "description": "Willpower Orange, Neon Blue, and Sky Blue gradients"
+    },
+    "panels": {
+      "background": "rgba(30, 62, 137, 0.2)",
+      "border": "rgba(31, 81, 255, 0.25)",
+      "blur": "30px",
+      "description": "Metallic Blue surfaces with Neon Blue edges"
+    }
+  },
+  "gradients": {
+    "hero_title": "fe5803 -> 6a22a4 -> 7dd3fc",
+    "text": "linear-gradient(135deg, #fe5803 0%, #1f51ff 100%)",
+    "mystery": "linear-gradient(135deg, #1e3e89 0%, #6a22a4 100%)"
+  }
+}
