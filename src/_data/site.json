@@ -54,7 +54,7 @@
     ],
     "code_projects": [
         {
-            "id": "Repo1",
+            "id": "Herramientas_Mecanicas",
             "title": "Herramientas Mecánicas",
             "repo": "iangrosssan/Herramientas_Mecanicas",
             "demoUrl": "https://iangrosssan.github.io/Herramientas_Mecanicas",
@@ -62,14 +62,14 @@
             "tags": ["Ingeniería", "Python", "Streamlit"]
         },
         {
-            "id": "Repo2",
+            "id": "Spotify_Sorter",
             "title": "Spotify Sorter",
             "repo": "iangrosssan/Sorter-Spotify",
             "text": "Aplicación de escritorio con arquitectura modular (Frontend PyQt / Backend) para la gestión automatizada de playlists mediante la API de Spotify. Incluye autenticación OAuth y compilación a ejecutable.",
             "tags": ["Software", "APIs", "PyQt"]
         },
         {
-            "id": "Repo3",
+            "id": "Controlador_PLD",
             "title": "Controlador PLD",
             "repo": "iangrosssan/Controlador_Montaje_PLD",
             "text": "Sistema de control paramétrico para Deposición por Láser Pulsado. Regula un sistema de doble motor paso a paso para ajustar los ángulos de inclinación de un espejo y cubrir de manera uniforme la superficie de un sustrato.",
