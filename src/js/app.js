@@ -11,6 +11,9 @@ function isMobile() {
 const summaries = {};
 const repos = {};
 
+// id → raw filename for hash-based deep links
+const academicById = {};
+
 if (window.SITE_DATA) {
     if (window.SITE_DATA.academic_projects) {
         window.SITE_DATA.academic_projects.forEach(p => {
@@ -19,6 +22,7 @@ if (window.SITE_DATA) {
                 text: p.text,
                 youtubeUrl: p.youtubeUrl || null
             };
+            academicById[p.id] = p.filename;
         });
     }
     if (window.SITE_DATA.code_projects) {
@@ -181,11 +185,9 @@ window.addEventListener('load', () => {
     const h = decodeURIComponent(location.hash.slice(1));
     if (!h) return;
 
-    // Try as PDF id — look up with full asset path relative to domain root
-    const rawPath = `/assets/repo_academico/${h}.pdf`;
-    if (summaries[rawPath]) {
-        // pass raw path — showPDF applies the base prefix itself
-        showPDF(h, rawPath);
+    // match hash id to project filename via direct lookup
+    if (academicById[h]) {
+        showPDF(h, academicById[h]);
         return;
     }
 
