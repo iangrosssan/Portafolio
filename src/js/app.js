@@ -184,10 +184,8 @@ window.addEventListener('load', () => {
     // Try as PDF id — look up with full asset path relative to domain root
     const rawPath = `/assets/repo_academico/${h}.pdf`;
     if (summaries[rawPath]) {
-        const base = window.SITE_BASE_URL || '';
-        // If base is '/', rawPath is already correct. If base is '/Portafolio/', avoid double slash
-        const fullPath = base === '/' ? rawPath : base + rawPath.substring(1);
-        showPDF(h, fullPath);
+        // pass raw path — showPDF applies the base prefix itself
+        showPDF(h, rawPath);
         return;
     }
 
